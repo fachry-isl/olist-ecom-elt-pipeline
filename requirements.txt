@@ -1,0 +1,5 @@
+# Airflow requirements for Google Cloud Platform
+apache-airflow-providers-google
+
+# Reading parquet files
+pyarrow

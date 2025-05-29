@@ -1,0 +1,8 @@
+# Docker
+.env
+
+# Airflow
+logs/*
+tmp/*
+dags/__pycache__
+dags/*.pyc
