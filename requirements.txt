@@ -3,3 +3,6 @@ apache-airflow-providers-google
 
 # Reading parquet files
 pyarrow
+
+# DBTDag using Cosmos
+astronomer-cosmos

@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: trips_data_all
+    database: gcp-refresh-2025
+    tables:
+      - name: external_table
+        description: "Taxi trips data from NYC"
+        columns:
+          - name: trip_id
+            description: "Unique identifier for each trip"
+          - name: pickup_datetime
+            description: "Datetime when the trip started"
+          - name: dropoff_datetime
+            description: "Datetime when the trip ended"
+          - name: passenger_count
+            description: "Number of passengers in the trip"
+          - name: trip_distance
+            description: "Distance of the trip in miles"
+          - name: fare_amount
+            description: "Total fare amount for the trip"

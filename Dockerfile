@@ -1,10 +1,14 @@
 FROM apache/airflow:2.9.2
 
 ENV AIRFLOW_HOME=/opt/airflow
+# ENV DBT_PROFILE_PATH=~/.dbt/
 
 USER root
 # Install necessary packages
 RUN apt-get update && apt-get clean
+
+RUN python -m venv dbt_venv && source dbt_venv/bin/activate && \
+    pip install --no-cache-dir dbt-bigquery && deactivate
 
 # Setup global python dependeicies for Airflow
 USER airflow

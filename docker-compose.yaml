@@ -19,13 +19,17 @@ x-airflow-common:
     GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/google_credentials.json
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/google_credentials.json'
     GCP_PROJECT_ID: 'gcp-refresh-2025'
-    GCP_GCS_BUCKET: 'gcp-refresh-2025-trips-data'
+    GCP_GCS_BUCKET: 'gcp-refresh-2025-olist-ecom-data'
+    # DBT Variables
+    DBT_PROFILE_PATH: /.dbt/profiles.yml
 
   volumes:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
+    - ./datasets:/opt/airflow/datasets
     - ~/.google/credentials/:/.google/credentials:ro
+    - ~/.dbt/:/.dbt:ro
 
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:

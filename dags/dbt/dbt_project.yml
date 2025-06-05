@@ -1,0 +1,14 @@
+version: 2
+
+name: "dbt_taxi"                # Required project name
+version: "1.0.0"                # Required version of the project
+profile: "dbt_taxi_profile"     # Required: matches a profile in profiles.yml
+
+model-paths: ["models"]         # Required path to your models
+
+models:
+  dbt_taxi:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

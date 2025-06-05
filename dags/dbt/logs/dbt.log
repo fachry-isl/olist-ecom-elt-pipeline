@@ -1,0 +1,917 @@
+[0m09:12:01.839378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2C9458370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2C8403640>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2C8403460>]}
+
+
+============================== 09:12:01.845885 | 0b26cbd3-f027-4eb5-a9ef-872a588d31af ==============================
+[0m09:12:01.845885 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:12:01.845885 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt debug', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m09:12:01.903532 [info ] [MainThread]: dbt version: 1.9.6
+[0m09:12:01.908883 [info ] [MainThread]: python version: 3.10.3
+[0m09:12:01.911422 [info ] [MainThread]: python path: C:\Users\ASUS\AppData\Local\Programs\Python\Python310\python.exe
+[0m09:12:01.913940 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m09:12:05.528063 [info ] [MainThread]: Using profiles dir at C:\Users\ASUS\.dbt
+[0m09:12:05.528063 [info ] [MainThread]: Using profiles.yml file at C:\Users\ASUS\.dbt\profiles.yml
+[0m09:12:05.528063 [info ] [MainThread]: Using dbt_project.yml file at D:\Projects 2025\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+[0m09:12:05.528063 [info ] [MainThread]: adapter type: bigquery
+[0m09:12:05.528063 [info ] [MainThread]: adapter version: 1.9.2
+[0m09:12:05.609175 [info ] [MainThread]: Configuration:
+[0m09:12:05.609175 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m09:12:05.609175 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m09:12:05.614727 [info ] [MainThread]: Required dependencies:
+[0m09:12:05.614727 [debug] [MainThread]: Executing "git --help"
+[0m09:12:05.667907 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m09:12:05.668907 [debug] [MainThread]: STDERR: "b''"
+[0m09:12:05.668907 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m09:12:05.669941 [info ] [MainThread]: Connection:
+[0m09:12:05.670907 [info ] [MainThread]:   method: service-account
+[0m09:12:05.671910 [info ] [MainThread]:   database: gcp-refresh-2025
+[0m09:12:05.672910 [info ] [MainThread]:   execution_project: gcp-refresh-2025
+[0m09:12:05.673909 [info ] [MainThread]:   schema: dbt_taxi
+[0m09:12:05.675645 [info ] [MainThread]:   location: US
+[0m09:12:05.676699 [info ] [MainThread]:   priority: interactive
+[0m09:12:05.677732 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m09:12:05.678730 [info ] [MainThread]:   impersonate_service_account: None
+[0m09:12:05.679698 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m09:12:05.680699 [info ] [MainThread]:   job_retries: 1
+[0m09:12:05.681698 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m09:12:05.682695 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m09:12:05.683761 [info ] [MainThread]:   timeout_seconds: 300
+[0m09:12:05.684954 [info ] [MainThread]:   client_id: None
+[0m09:12:05.686320 [info ] [MainThread]:   token_uri: None
+[0m09:12:05.687331 [info ] [MainThread]:   compute_region: None
+[0m09:12:05.688332 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m09:12:05.689331 [info ] [MainThread]:   gcs_bucket: None
+[0m09:12:05.690437 [info ] [MainThread]:   dataproc_batch: None
+[0m09:12:05.692278 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:12:06.813003 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m09:12:06.813003 [debug] [MainThread]: On debug: select 1 as id
+[0m09:12:06.818030 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:12:07.636208 [error] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:cacba2da-24e6-4c6c-b4c8-bdf668f91b60&page=queryresults
+[0m09:12:07.636208 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m09:12:07.639231 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m09:12:07.639231 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('config version' was unexpected)
+
+Error encountered in D:\Projects 2025\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+
+
+[0m09:12:07.639231 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Access Denied: Project gcp-refresh-2025: User does not have bigquery.jobs.create permission in project gcp-refresh-2025.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m09:12:07.644731 [debug] [MainThread]: Command `dbt debug` failed at 09:12:07.644731 after 5.96 seconds
+[0m09:12:07.644731 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m09:12:07.646969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2C9458370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2E5B28A30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2E5BDE0E0>]}
+[0m09:12:07.648644 [debug] [MainThread]: Flushing usage events
+[0m09:12:08.977209 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:17:49.954549 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202825183A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202814C36A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202814C34C0>]}
+
+
+============================== 09:17:49.964335 | 449192d4-efd4-4e63-b192-752647050e8b ==============================
+[0m09:17:49.964335 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:17:49.964335 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:17:49.990301 [info ] [MainThread]: dbt version: 1.9.6
+[0m09:17:49.990301 [info ] [MainThread]: python version: 3.10.3
+[0m09:17:49.990301 [info ] [MainThread]: python path: C:\Users\ASUS\AppData\Local\Programs\Python\Python310\python.exe
+[0m09:17:49.994893 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m09:17:54.595013 [info ] [MainThread]: Using profiles dir at C:\Users\ASUS\.dbt
+[0m09:17:54.595013 [info ] [MainThread]: Using profiles.yml file at C:\Users\ASUS\.dbt\profiles.yml
+[0m09:17:54.596520 [info ] [MainThread]: Using dbt_project.yml file at D:\Projects 2025\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+[0m09:17:54.596520 [info ] [MainThread]: adapter type: bigquery
+[0m09:17:54.596520 [info ] [MainThread]: adapter version: 1.9.2
+[0m09:17:54.680079 [info ] [MainThread]: Configuration:
+[0m09:17:54.680079 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m09:17:54.680079 [info ] [MainThread]:   dbt_project.yml file [[31mERROR invalid[0m]
+[0m09:17:54.680079 [info ] [MainThread]: Required dependencies:
+[0m09:17:54.680079 [debug] [MainThread]: Executing "git --help"
+[0m09:17:54.739612 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m09:17:54.765424 [debug] [MainThread]: STDERR: "b''"
+[0m09:17:54.765424 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m09:17:54.765424 [info ] [MainThread]: Connection:
+[0m09:17:54.765424 [info ] [MainThread]:   method: service-account
+[0m09:17:54.769430 [info ] [MainThread]:   database: gcp-refresh-2025
+[0m09:17:54.769430 [info ] [MainThread]:   execution_project: gcp-refresh-2025
+[0m09:17:54.769430 [info ] [MainThread]:   schema: dbt_taxi
+[0m09:17:54.769430 [info ] [MainThread]:   location: US
+[0m09:17:54.769430 [info ] [MainThread]:   priority: interactive
+[0m09:17:54.775139 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m09:17:54.776215 [info ] [MainThread]:   impersonate_service_account: None
+[0m09:17:54.778251 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m09:17:54.778251 [info ] [MainThread]:   job_retries: 1
+[0m09:17:54.780398 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m09:17:54.782774 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m09:17:54.783780 [info ] [MainThread]:   timeout_seconds: 300
+[0m09:17:54.785147 [info ] [MainThread]:   client_id: None
+[0m09:17:54.785679 [info ] [MainThread]:   token_uri: None
+[0m09:17:54.786687 [info ] [MainThread]:   compute_region: None
+[0m09:17:54.787821 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m09:17:54.789484 [info ] [MainThread]:   gcs_bucket: None
+[0m09:17:54.789698 [info ] [MainThread]:   dataproc_batch: None
+[0m09:17:54.789698 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:17:55.653327 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m09:17:55.653327 [debug] [MainThread]: On debug: select 1 as id
+[0m09:17:55.653327 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:17:57.169737 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:0004e994-9505-4842-9110-3ef9b4bed514&page=queryresults
+[0m09:18:01.316482 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m09:18:01.316482 [info ] [MainThread]: [31m1 check failed:[0m
+[0m09:18:01.316482 [info ] [MainThread]: Project loading failed for the following reason:
+Runtime Error
+  at path []: Additional properties are not allowed ('config version' was unexpected)
+
+Error encountered in D:\Projects 2025\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+
+
+[0m09:18:01.321552 [debug] [MainThread]: Command `dbt debug` failed at 09:18:01.321552 after 11.47 seconds
+[0m09:18:01.321552 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m09:18:01.321552 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000202825183A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002029EC59C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002029EC98FA0>]}
+[0m09:18:01.321552 [debug] [MainThread]: Flushing usage events
+[0m09:18:02.719385 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:18:28.160932 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D888BC340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D87863670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D87863490>]}
+
+
+============================== 09:18:28.166936 | 3331fc91-46da-47cb-979c-78e5cb725c7e ==============================
+[0m09:18:28.166936 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:18:28.166936 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:18:28.195515 [info ] [MainThread]: dbt version: 1.9.6
+[0m09:18:28.196515 [info ] [MainThread]: python version: 3.10.3
+[0m09:18:28.197516 [info ] [MainThread]: python path: C:\Users\ASUS\AppData\Local\Programs\Python\Python310\python.exe
+[0m09:18:28.198517 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m09:18:32.577115 [info ] [MainThread]: Using profiles dir at C:\Users\ASUS\.dbt
+[0m09:18:32.577115 [info ] [MainThread]: Using profiles.yml file at C:\Users\ASUS\.dbt\profiles.yml
+[0m09:18:32.577115 [info ] [MainThread]: Using dbt_project.yml file at D:\Projects 2025\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+[0m09:18:32.580139 [info ] [MainThread]: adapter type: bigquery
+[0m09:18:32.580139 [info ] [MainThread]: adapter version: 1.9.2
+[0m09:18:32.706781 [info ] [MainThread]: Configuration:
+[0m09:18:32.706781 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m09:18:32.710794 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m09:18:32.710794 [info ] [MainThread]: Required dependencies:
+[0m09:18:32.712304 [debug] [MainThread]: Executing "git --help"
+[0m09:18:32.755966 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m09:18:32.755966 [debug] [MainThread]: STDERR: "b''"
+[0m09:18:32.755966 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m09:18:32.755966 [info ] [MainThread]: Connection:
+[0m09:18:32.755966 [info ] [MainThread]:   method: service-account
+[0m09:18:32.755966 [info ] [MainThread]:   database: gcp-refresh-2025
+[0m09:18:32.762979 [info ] [MainThread]:   execution_project: gcp-refresh-2025
+[0m09:18:32.763900 [info ] [MainThread]:   schema: dbt_taxi
+[0m09:18:32.765902 [info ] [MainThread]:   location: US
+[0m09:18:32.766907 [info ] [MainThread]:   priority: interactive
+[0m09:18:32.768901 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m09:18:32.768901 [info ] [MainThread]:   impersonate_service_account: None
+[0m09:18:32.770285 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m09:18:32.772449 [info ] [MainThread]:   job_retries: 1
+[0m09:18:32.773455 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m09:18:32.774472 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m09:18:32.776257 [info ] [MainThread]:   timeout_seconds: 300
+[0m09:18:32.777261 [info ] [MainThread]:   client_id: None
+[0m09:18:32.777261 [info ] [MainThread]:   token_uri: None
+[0m09:18:32.778979 [info ] [MainThread]:   compute_region: None
+[0m09:18:32.781222 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m09:18:32.782558 [info ] [MainThread]:   gcs_bucket: None
+[0m09:18:32.784197 [info ] [MainThread]:   dataproc_batch: None
+[0m09:18:32.785206 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:18:33.717729 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m09:18:33.717729 [debug] [MainThread]: On debug: select 1 as id
+[0m09:18:33.717729 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:18:34.418909 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:0e32f850-d45b-4533-9395-14dd7180290a&page=queryresults
+[0m09:18:35.241805 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m09:18:35.241805 [info ] [MainThread]: [32mAll checks passed![0m
+[0m09:18:35.241805 [debug] [MainThread]: Command `dbt debug` succeeded at 09:18:35.241805 after 7.19 seconds
+[0m09:18:35.241805 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m09:18:35.241805 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D888BC340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025D8A805DE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025DA508C850>]}
+[0m09:18:35.241805 [debug] [MainThread]: Flushing usage events
+[0m09:18:36.255171 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:18:47.129469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C62118340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C621CDB40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C61A31000>]}
+
+
+============================== 09:18:47.137559 | 5b03980c-642c-44f6-95d6-c427501aa32f ==============================
+[0m09:18:47.137559 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:18:47.137559 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt build', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m09:18:51.099615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C61CCC610>]}
+[0m09:18:51.180808 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C74F90CD0>]}
+[0m09:18:51.180808 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:18:52.379457 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:18:52.381993 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:18:52.381993 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C7E79E0E0>]}
+[0m09:18:56.003287 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_taxi.marts
+[0m09:18:56.024587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C7ED7BD00>]}
+[0m09:18:56.160875 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:18:56.198775 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:18:56.254727 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C7F0BDA80>]}
+[0m09:18:56.254727 [info ] [MainThread]: Found 1 model, 1 source, 493 macros
+[0m09:18:56.259775 [info ] [MainThread]: 
+[0m09:18:56.259775 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:18:56.259775 [info ] [MainThread]: 
+[0m09:18:56.266345 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m09:18:56.268352 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025'
+[0m09:18:56.268675 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:18:56.862241 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_gcp-refresh-2025, now create_gcp-refresh-2025_dbt_taxi)
+[0m09:18:56.874324 [debug] [ThreadPool]: Creating schema "database: "gcp-refresh-2025"
+schema: "dbt_taxi"
+"
+[0m09:18:56.890040 [debug] [ThreadPool]: On create_gcp-refresh-2025_dbt_taxi: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_taxi_profile", "target_name": "dev", "connection_name": "create_gcp-refresh-2025_dbt_taxi"} */
+create schema if not exists `gcp-refresh-2025`.`dbt_taxi`
+  
+[0m09:18:56.893553 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:18:57.552582 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:f794848d-0fdf-4b47-80f0-abdb37d105e7&page=queryresults
+[0m09:18:58.591213 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_dbt_taxi'
+[0m09:18:58.591213 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:18:59.104445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C7F0BE8F0>]}
+[0m09:18:59.104445 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:18:59.124819 [debug] [Thread-1 (]: Began running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:18:59.124819 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_taxi.stg_taxi_data__trips ...................... [RUN]
+[0m09:18:59.124819 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_taxi.stg_taxi_data__trips'
+[0m09:18:59.124819 [debug] [Thread-1 (]: Began compiling node model.dbt_taxi.stg_taxi_data__trips
+[0m09:18:59.139884 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:18:59.170818 [debug] [Thread-1 (]: Began executing node model.dbt_taxi.stg_taxi_data__trips
+[0m09:18:59.204078 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:18:59.206144 [debug] [Thread-1 (]: On model.dbt_taxi.stg_taxi_data__trips: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_taxi_profile", "target_name": "dev", "node_id": "model.dbt_taxi.stg_taxi_data__trips"} */
+
+
+  create or replace view `gcp-refresh-2025`.`dbt_taxi`.`stg_taxi_data__trips`
+  OPTIONS()
+  as SELECT
+    trip_id,
+    fare_amount
+FROM
+    `gcp-refresh-2025`.`trips_data_all`.`trips`;
+
+
+[0m09:18:59.206144 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m09:18:59.838536 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:aa6badb2-8846-44a7-b2ea-e8b5b7c38157&page=queryresults
+[0m09:18:59.838536 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:aa6badb2-8846-44a7-b2ea-e8b5b7c38157&page=queryresults
+[0m09:18:59.871842 [debug] [Thread-1 (]: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Not found: Table gcp-refresh-2025:trips_data_all.trips was not found in location US
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:18:59.876507 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '5b03980c-642c-44f6-95d6-c427501aa32f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C61CCF1F0>]}
+[0m09:18:59.897974 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model dbt_taxi.stg_taxi_data__trips ............. [[31mERROR[0m in 0.75s]
+[0m09:18:59.907516 [debug] [Thread-1 (]: Finished running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:18:59.909535 [debug] [Thread-4 (]: Marking all children of 'model.dbt_taxi.stg_taxi_data__trips' to be skipped because of status 'error'.  Reason: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Not found: Table gcp-refresh-2025:trips_data_all.trips was not found in location US
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql.
+[0m09:18:59.914644 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:18:59.918808 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:18:59.918808 [debug] [MainThread]: Connection 'create_gcp-refresh-2025_dbt_taxi' was properly closed.
+[0m09:18:59.922823 [debug] [MainThread]: Connection 'list_gcp-refresh-2025_dbt_taxi' was properly closed.
+[0m09:18:59.923520 [debug] [MainThread]: Connection 'model.dbt_taxi.stg_taxi_data__trips' was properly closed.
+[0m09:18:59.923520 [info ] [MainThread]: 
+[0m09:18:59.923520 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.66 seconds (3.66s).
+[0m09:18:59.927532 [debug] [MainThread]: Command end result
+[0m09:18:59.989028 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:18:59.992574 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:18:59.998661 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\run_results.json
+[0m09:18:59.998661 [info ] [MainThread]: 
+[0m09:18:59.998661 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m09:18:59.998661 [info ] [MainThread]: 
+[0m09:18:59.998661 [error] [MainThread]:   Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Not found: Table gcp-refresh-2025:trips_data_all.trips was not found in location US
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:18:59.998661 [info ] [MainThread]: 
+[0m09:19:00.005721 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m09:19:00.009738 [debug] [MainThread]: Command `dbt build` failed at 09:19:00.009738 after 12.97 seconds
+[0m09:19:00.011929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C62118340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C6217A050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000023C7F0BCBE0>]}
+[0m09:19:00.013587 [debug] [MainThread]: Flushing usage events
+[0m09:19:01.034950 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:22:13.042963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E83F9802B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E83E923850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E83E923670>]}
+
+
+============================== 09:22:13.044470 | 1657fb92-4f3c-4d3b-8c6c-f4fc37b98565 ==============================
+[0m09:22:13.044470 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:22:13.044470 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt build', 'send_anonymous_usage_stats': 'True'}
+[0m09:22:17.148220 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1657fb92-4f3c-4d3b-8c6c-f4fc37b98565', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E84114A2F0>]}
+[0m09:22:17.209133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1657fb92-4f3c-4d3b-8c6c-f4fc37b98565', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E840AA67A0>]}
+[0m09:22:17.209133 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:22:18.103141 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:22:18.407867 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m09:22:18.413451 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\__sources.yml
+[0m09:22:18.802840 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_taxi.stg_taxi_data__trips' (models\staging\stg_taxi_data__trips.sql) depends on a source named 'taxi_data.trips' which was not found
+[0m09:22:18.805091 [debug] [MainThread]: Command `dbt build` failed at 09:22:18.805091 after 5.86 seconds
+[0m09:22:18.806254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E83F9802B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E85C6A3AC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E85C84C970>]}
+[0m09:22:18.807437 [debug] [MainThread]: Flushing usage events
+[0m09:22:20.003288 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:22:36.175674 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3900783A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38F023910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38F023730>]}
+
+
+============================== 09:22:36.178217 | 6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e ==============================
+[0m09:22:36.178217 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:22:36.187032 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:22:41.773285 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3AC76A920>]}
+[0m09:22:41.865831 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3911022F0>]}
+[0m09:22:41.874840 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:22:42.910507 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:22:43.215510 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m09:22:43.220566 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\__sources.yml
+[0m09:22:43.220566 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\staging\stg_taxi_data__trips.sql
+[0m09:22:43.794299 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_taxi.marts
+[0m09:22:43.836551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ACE0AAD0>]}
+[0m09:22:43.987480 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:22:43.987480 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:22:44.068913 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ACF3FF70>]}
+[0m09:22:44.068913 [info ] [MainThread]: Found 1 model, 1 source, 493 macros
+[0m09:22:44.075641 [info ] [MainThread]: 
+[0m09:22:44.075641 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:22:44.078647 [info ] [MainThread]: 
+[0m09:22:44.080433 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m09:22:44.083031 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025'
+[0m09:22:44.084038 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:22:44.628458 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_dbt_taxi'
+[0m09:22:44.628458 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:22:45.156143 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ACF3E7D0>]}
+[0m09:22:45.156143 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:22:45.156143 [debug] [Thread-1 (]: Began running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:22:45.156143 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_taxi.stg_taxi_data__trips ...................... [RUN]
+[0m09:22:45.165849 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_taxi.stg_taxi_data__trips'
+[0m09:22:45.165849 [debug] [Thread-1 (]: Began compiling node model.dbt_taxi.stg_taxi_data__trips
+[0m09:22:45.176508 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:22:45.176508 [debug] [Thread-1 (]: Began executing node model.dbt_taxi.stg_taxi_data__trips
+[0m09:22:45.230246 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:22:45.232247 [debug] [Thread-1 (]: On model.dbt_taxi.stg_taxi_data__trips: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_taxi_profile", "target_name": "dev", "node_id": "model.dbt_taxi.stg_taxi_data__trips"} */
+
+
+  create or replace view `gcp-refresh-2025`.`dbt_taxi`.`stg_taxi_data__trips`
+  OPTIONS()
+  as SELECT
+    trip_id,
+    fare_amount
+FROM
+    `gcp-refresh-2025`.`trips_data_all`.`trips`;
+
+
+[0m09:22:45.233244 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m09:22:46.132094 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:4f0b0a73-50f9-422c-9e48-3d832c007bb1&page=queryresults
+[0m09:22:46.132094 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:4f0b0a73-50f9-422c-9e48-3d832c007bb1&page=queryresults
+[0m09:22:46.141103 [debug] [Thread-1 (]: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Not found: Table gcp-refresh-2025:trips_data_all.trips was not found in location US
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:22:46.151021 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6f8c2c26-50b0-4664-ab49-4f5e37aa8c6e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C38FCC3DC0>]}
+[0m09:22:46.153587 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model dbt_taxi.stg_taxi_data__trips ............. [[31mERROR[0m in 0.98s]
+[0m09:22:46.155865 [debug] [Thread-1 (]: Finished running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:22:46.158874 [debug] [Thread-4 (]: Marking all children of 'model.dbt_taxi.stg_taxi_data__trips' to be skipped because of status 'error'.  Reason: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Not found: Table gcp-refresh-2025:trips_data_all.trips was not found in location US
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql.
+[0m09:22:46.162555 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:22:46.167561 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:22:46.169561 [debug] [MainThread]: Connection 'list_gcp-refresh-2025' was properly closed.
+[0m09:22:46.170462 [debug] [MainThread]: Connection 'list_gcp-refresh-2025_dbt_taxi' was properly closed.
+[0m09:22:46.173014 [debug] [MainThread]: Connection 'model.dbt_taxi.stg_taxi_data__trips' was properly closed.
+[0m09:22:46.175158 [info ] [MainThread]: 
+[0m09:22:46.177170 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.10 seconds (2.10s).
+[0m09:22:46.178786 [debug] [MainThread]: Command end result
+[0m09:22:46.286361 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:22:46.293893 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:22:46.303941 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\run_results.json
+[0m09:22:46.303941 [info ] [MainThread]: 
+[0m09:22:46.303941 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m09:22:46.303941 [info ] [MainThread]: 
+[0m09:22:46.303941 [error] [MainThread]:   Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Not found: Table gcp-refresh-2025:trips_data_all.trips was not found in location US
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:22:46.303941 [info ] [MainThread]: 
+[0m09:22:46.303941 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m09:22:46.315988 [debug] [MainThread]: Command `dbt build` failed at 09:22:46.314974 after 10.32 seconds
+[0m09:22:46.316985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3900783A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C391100F40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C3ACC5E7D0>]}
+[0m09:22:46.317506 [debug] [MainThread]: Flushing usage events
+[0m09:22:47.340110 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:25:55.835338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC24458340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC2450DB40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC23D71000>]}
+
+
+============================== 09:25:55.835338 | 34f26476-24df-45ef-b66c-6dc1b316ba9a ==============================
+[0m09:25:55.835338 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:25:55.835338 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt build', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:25:59.989534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '34f26476-24df-45ef-b66c-6dc1b316ba9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC40B45600>]}
+[0m09:26:00.157519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '34f26476-24df-45ef-b66c-6dc1b316ba9a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC372E29B0>]}
+[0m09:26:00.162530 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:26:01.280118 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:26:01.614863 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m09:26:01.614863 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\__sources.yml
+[0m09:26:02.151683 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_taxi.stg_taxi_data__trips' (models\staging\stg_taxi_data__trips.sql) depends on a source named 'taxi_data.external_table' which was not found
+[0m09:26:02.153691 [debug] [MainThread]: Command `dbt build` failed at 09:26:02.153691 after 6.41 seconds
+[0m09:26:02.154826 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC24458340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC41184070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001CC4132EBF0>]}
+[0m09:26:02.155486 [debug] [MainThread]: Flushing usage events
+[0m09:26:03.657109 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:26:27.977784 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F57FC370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F47A38E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F47A3700>]}
+
+
+============================== 09:26:27.982792 | 6384306a-ccc7-434b-89a8-98c454087bf3 ==============================
+[0m09:26:27.982792 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:26:27.984814 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt build', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:26:31.801686 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6384306a-ccc7-434b-89a8-98c454087bf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F3AA52D0>]}
+[0m09:26:31.897978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6384306a-ccc7-434b-89a8-98c454087bf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2886E04C0>]}
+[0m09:26:31.897978 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:26:32.827367 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:26:33.091373 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m09:26:33.091373 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\__sources.yml
+[0m09:26:33.091373 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\staging\stg_taxi_data__trips.sql
+[0m09:26:33.619042 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_taxi.marts
+[0m09:26:33.641838 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6384306a-ccc7-434b-89a8-98c454087bf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2925E3FD0>]}
+[0m09:26:33.787668 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:26:33.793082 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:26:33.839668 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6384306a-ccc7-434b-89a8-98c454087bf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C29243CF40>]}
+[0m09:26:33.839668 [info ] [MainThread]: Found 1 model, 1 source, 493 macros
+[0m09:26:33.839668 [info ] [MainThread]: 
+[0m09:26:33.839668 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:26:33.839668 [info ] [MainThread]: 
+[0m09:26:33.839668 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m09:26:33.848676 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025'
+[0m09:26:33.848676 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:26:34.414876 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_dbt_taxi'
+[0m09:26:34.417381 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:26:34.935771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6384306a-ccc7-434b-89a8-98c454087bf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F4767160>]}
+[0m09:26:34.935771 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:26:34.945736 [debug] [Thread-1 (]: Began running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:26:34.949809 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_taxi.stg_taxi_data__trips ...................... [RUN]
+[0m09:26:34.949809 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_taxi.stg_taxi_data__trips'
+[0m09:26:34.949809 [debug] [Thread-1 (]: Began compiling node model.dbt_taxi.stg_taxi_data__trips
+[0m09:26:34.970846 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:26:34.971809 [debug] [Thread-1 (]: Began executing node model.dbt_taxi.stg_taxi_data__trips
+[0m09:26:35.032043 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:26:35.034043 [debug] [Thread-1 (]: On model.dbt_taxi.stg_taxi_data__trips: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_taxi_profile", "target_name": "dev", "node_id": "model.dbt_taxi.stg_taxi_data__trips"} */
+
+
+  create or replace view `gcp-refresh-2025`.`dbt_taxi`.`stg_taxi_data__trips`
+  OPTIONS()
+  as SELECT
+    trip_id,
+    fare_amount
+FROM
+    `gcp-refresh-2025`.`trips_data_all`.`external_table`;
+
+
+[0m09:26:35.037096 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m09:26:35.887693 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:68327500-02e4-488c-b7ec-b42be7269759&page=queryresults
+[0m09:26:36.249677 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:68327500-02e4-488c-b7ec-b42be7269759&page=queryresults
+[0m09:26:36.260151 [debug] [Thread-1 (]: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Unrecognized name: trip_id at [7:5]
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:26:36.266663 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '6384306a-ccc7-434b-89a8-98c454087bf3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F543FD90>]}
+[0m09:26:36.268695 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model dbt_taxi.stg_taxi_data__trips ............. [[31mERROR[0m in 1.31s]
+[0m09:26:36.273206 [debug] [Thread-1 (]: Finished running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:26:36.274829 [debug] [Thread-4 (]: Marking all children of 'model.dbt_taxi.stg_taxi_data__trips' to be skipped because of status 'error'.  Reason: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Unrecognized name: trip_id at [7:5]
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql.
+[0m09:26:36.278528 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:26:36.279038 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:26:36.279038 [debug] [MainThread]: Connection 'list_gcp-refresh-2025' was properly closed.
+[0m09:26:36.283561 [debug] [MainThread]: Connection 'list_gcp-refresh-2025_dbt_taxi' was properly closed.
+[0m09:26:36.284621 [debug] [MainThread]: Connection 'model.dbt_taxi.stg_taxi_data__trips' was properly closed.
+[0m09:26:36.285933 [info ] [MainThread]: 
+[0m09:26:36.287539 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.45 seconds (2.45s).
+[0m09:26:36.290246 [debug] [MainThread]: Command end result
+[0m09:26:36.353752 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:26:36.358100 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:26:36.377283 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\run_results.json
+[0m09:26:36.378978 [info ] [MainThread]: 
+[0m09:26:36.381097 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m09:26:36.382710 [info ] [MainThread]: 
+[0m09:26:36.383789 [error] [MainThread]:   Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Unrecognized name: trip_id at [7:5]
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:26:36.386535 [info ] [MainThread]: 
+[0m09:26:36.388115 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m09:26:36.391227 [debug] [MainThread]: Command `dbt build` failed at 09:26:36.391227 after 8.53 seconds
+[0m09:26:36.393082 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F57FC370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C2F6880F40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C292A62110>]}
+[0m09:26:36.395089 [debug] [MainThread]: Flushing usage events
+[0m09:26:37.414639 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:27:31.367270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002174530C310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217453BEA10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217464342E0>]}
+
+
+============================== 09:27:31.377641 | da65fb2f-5593-45f5-97d0-a66569a67731 ==============================
+[0m09:27:31.377641 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:27:31.377641 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt build', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:27:35.813596 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'da65fb2f-5593-45f5-97d0-a66569a67731', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002176198FB80>]}
+[0m09:27:36.022053 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'da65fb2f-5593-45f5-97d0-a66569a67731', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021761936E30>]}
+[0m09:27:36.024056 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:27:37.303895 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:27:37.649095 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m09:27:37.650730 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\staging\stg_taxi_data__trips.sql
+[0m09:27:37.997212 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_taxi.marts
+[0m09:27:38.019469 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'da65fb2f-5593-45f5-97d0-a66569a67731', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217621A8FA0>]}
+[0m09:27:38.134220 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:27:38.137874 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:27:38.180977 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'da65fb2f-5593-45f5-97d0-a66569a67731', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021761FFBAF0>]}
+[0m09:27:38.181979 [info ] [MainThread]: Found 1 model, 1 source, 493 macros
+[0m09:27:38.184682 [info ] [MainThread]: 
+[0m09:27:38.185629 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:27:38.186870 [info ] [MainThread]: 
+[0m09:27:38.187219 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m09:27:38.189082 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025'
+[0m09:27:38.190092 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:27:38.715375 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_dbt_taxi'
+[0m09:27:38.716406 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:27:39.334797 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'da65fb2f-5593-45f5-97d0-a66569a67731', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021761FF8D00>]}
+[0m09:27:39.342368 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:27:39.342821 [debug] [Thread-1 (]: Began running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:27:39.342821 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_taxi.stg_taxi_data__trips ...................... [RUN]
+[0m09:27:39.351251 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_taxi.stg_taxi_data__trips'
+[0m09:27:39.352297 [debug] [Thread-1 (]: Began compiling node model.dbt_taxi.stg_taxi_data__trips
+[0m09:27:39.361339 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:27:39.362353 [debug] [Thread-1 (]: Began executing node model.dbt_taxi.stg_taxi_data__trips
+[0m09:27:39.401139 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:27:39.402781 [debug] [Thread-1 (]: On model.dbt_taxi.stg_taxi_data__trips: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_taxi_profile", "target_name": "dev", "node_id": "model.dbt_taxi.stg_taxi_data__trips"} */
+
+
+  create or replace view `gcp-refresh-2025`.`dbt_taxi`.`stg_taxi_data__trips`
+  OPTIONS()
+  as SELECT
+    VendorID as vendor_id,
+    paymwent_type,
+    fare_amount,
+    tip_amount,
+    total_amount
+FROM
+    `gcp-refresh-2025`.`trips_data_all`.`external_table`;
+
+
+[0m09:27:39.402781 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m09:27:40.246354 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:90d3bf29-1204-4a69-8394-f39ebac819e9&page=queryresults
+[0m09:27:40.584931 [error] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:90d3bf29-1204-4a69-8394-f39ebac819e9&page=queryresults
+[0m09:27:40.593724 [debug] [Thread-1 (]: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Unrecognized name: paymwent_type; Did you mean payment_type? at [8:5]
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:27:40.597258 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da65fb2f-5593-45f5-97d0-a66569a67731', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021761FFA7A0>]}
+[0m09:27:40.598257 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model dbt_taxi.stg_taxi_data__trips ............. [[31mERROR[0m in 1.24s]
+[0m09:27:40.600665 [debug] [Thread-1 (]: Finished running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:27:40.602681 [debug] [Thread-4 (]: Marking all children of 'model.dbt_taxi.stg_taxi_data__trips' to be skipped because of status 'error'.  Reason: Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Unrecognized name: paymwent_type; Did you mean payment_type? at [8:5]
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql.
+[0m09:27:40.605625 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:27:40.608149 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:27:40.609145 [debug] [MainThread]: Connection 'list_gcp-refresh-2025' was properly closed.
+[0m09:27:40.610148 [debug] [MainThread]: Connection 'list_gcp-refresh-2025_dbt_taxi' was properly closed.
+[0m09:27:40.611658 [debug] [MainThread]: Connection 'model.dbt_taxi.stg_taxi_data__trips' was properly closed.
+[0m09:27:40.613669 [info ] [MainThread]: 
+[0m09:27:40.614678 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 2.43 seconds (2.43s).
+[0m09:27:40.617551 [debug] [MainThread]: Command end result
+[0m09:27:40.676653 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:27:40.676653 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:27:40.685150 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\run_results.json
+[0m09:27:40.693873 [info ] [MainThread]: 
+[0m09:27:40.694872 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m09:27:40.696870 [info ] [MainThread]: 
+[0m09:27:40.697451 [error] [MainThread]:   Database Error in model stg_taxi_data__trips (models\staging\stg_taxi_data__trips.sql)
+  Unrecognized name: paymwent_type; Did you mean payment_type? at [8:5]
+  compiled code at target\run\dbt_taxi\models\staging\stg_taxi_data__trips.sql
+[0m09:27:40.697451 [info ] [MainThread]: 
+[0m09:27:40.700666 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m09:27:40.701683 [debug] [MainThread]: Command `dbt build` failed at 09:27:40.701683 after 9.43 seconds
+[0m09:27:40.703192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002174530C310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000217621656C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000021745368C10>]}
+[0m09:27:40.704202 [debug] [MainThread]: Flushing usage events
+[0m09:27:42.125394 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:27:52.582110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C90E4C3A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C8FDF3910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C8FDF3730>]}
+
+
+============================== 09:27:52.582110 | 3eda9651-a3cc-4893-9393-6bc30d31d236 ==============================
+[0m09:27:52.582110 [info ] [MainThread]: Running with dbt=1.9.6
+[0m09:27:52.582110 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\Projects 2025\\taxi-dbt-airflow\\dags\\dbt\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt build', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:27:56.965256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3eda9651-a3cc-4893-9393-6bc30d31d236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028CAD536080>]}
+[0m09:27:57.038322 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3eda9651-a3cc-4893-9393-6bc30d31d236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028CAD477700>]}
+[0m09:27:57.043355 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m09:27:58.096023 [debug] [MainThread]: checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad, vars: {}, profile: , target: , version: 1.9.6
+[0m09:27:58.399551 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m09:27:58.399551 [debug] [MainThread]: Partial parsing: updated file: dbt_taxi://models\staging\stg_taxi_data__trips.sql
+[0m09:27:58.708099 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_taxi.marts
+[0m09:27:58.735008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3eda9651-a3cc-4893-9393-6bc30d31d236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028CADCED6C0>]}
+[0m09:27:58.841219 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:27:58.846344 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:27:58.887144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3eda9651-a3cc-4893-9393-6bc30d31d236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028CADB3F9A0>]}
+[0m09:27:58.892170 [info ] [MainThread]: Found 1 model, 1 source, 493 macros
+[0m09:27:58.894181 [info ] [MainThread]: 
+[0m09:27:58.894181 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:27:58.897190 [info ] [MainThread]: 
+[0m09:27:58.899701 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m09:27:58.901706 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025'
+[0m09:27:58.902707 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:27:59.420503 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_dbt_taxi'
+[0m09:27:59.420503 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:28:00.015377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3eda9651-a3cc-4893-9393-6bc30d31d236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C8FDB71F0>]}
+[0m09:28:00.015377 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:28:00.030257 [debug] [Thread-1 (]: Began running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:28:00.035267 [info ] [Thread-1 (]: 1 of 1 START sql view model dbt_taxi.stg_taxi_data__trips ...................... [RUN]
+[0m09:28:00.035267 [debug] [Thread-1 (]: Acquiring new bigquery connection 'model.dbt_taxi.stg_taxi_data__trips'
+[0m09:28:00.037782 [debug] [Thread-1 (]: Began compiling node model.dbt_taxi.stg_taxi_data__trips
+[0m09:28:00.050770 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:28:00.052770 [debug] [Thread-1 (]: Began executing node model.dbt_taxi.stg_taxi_data__trips
+[0m09:28:00.095267 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_taxi.stg_taxi_data__trips"
+[0m09:28:00.097819 [debug] [Thread-1 (]: On model.dbt_taxi.stg_taxi_data__trips: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_taxi_profile", "target_name": "dev", "node_id": "model.dbt_taxi.stg_taxi_data__trips"} */
+
+
+  create or replace view `gcp-refresh-2025`.`dbt_taxi`.`stg_taxi_data__trips`
+  OPTIONS()
+  as SELECT
+    VendorID as vendor_id,
+    payment_type,
+    fare_amount,
+    tip_amount,
+    total_amount
+FROM
+    `gcp-refresh-2025`.`trips_data_all`.`external_table`;
+
+
+[0m09:28:00.098855 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m09:28:01.061402 [debug] [Thread-1 (]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:73f1ca0a-f7df-451d-8cfe-385f86baaf88&page=queryresults
+[0m09:28:01.934935 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3eda9651-a3cc-4893-9393-6bc30d31d236', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028CA3D02710>]}
+[0m09:28:01.934935 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbt_taxi.stg_taxi_data__trips ................. [[32mCREATE VIEW (0 processed)[0m in 1.90s]
+[0m09:28:01.934935 [debug] [Thread-1 (]: Finished running node model.dbt_taxi.stg_taxi_data__trips
+[0m09:28:01.934935 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:28:01.945104 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:28:01.945104 [debug] [MainThread]: Connection 'list_gcp-refresh-2025' was properly closed.
+[0m09:28:01.945104 [debug] [MainThread]: Connection 'list_gcp-refresh-2025_dbt_taxi' was properly closed.
+[0m09:28:01.945104 [debug] [MainThread]: Connection 'model.dbt_taxi.stg_taxi_data__trips' was properly closed.
+[0m09:28:01.950219 [info ] [MainThread]: 
+[0m09:28:01.952262 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.05 seconds (3.05s).
+[0m09:28:01.954264 [debug] [MainThread]: Command end result
+[0m09:28:01.993247 [debug] [MainThread]: Wrote artifact WritableManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\manifest.json
+[0m09:28:01.995544 [debug] [MainThread]: Wrote artifact SemanticManifest to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\semantic_manifest.json
+[0m09:28:02.005904 [debug] [MainThread]: Wrote artifact RunExecutionResult to D:\Projects 2025\taxi-dbt-airflow\dags\dbt\target\run_results.json
+[0m09:28:02.005904 [info ] [MainThread]: 
+[0m09:28:02.009900 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:28:02.010900 [info ] [MainThread]: 
+[0m09:28:02.011899 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m09:28:02.013903 [debug] [MainThread]: Command `dbt build` succeeded at 09:28:02.013903 after 9.55 seconds
+[0m09:28:02.014903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C90E4C3A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028CAD477700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028C91ED3460>]}
+[0m09:28:02.015904 [debug] [MainThread]: Flushing usage events
+[0m09:28:03.012051 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:36:35.759090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027406840370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027408533700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027408533520>]}
+
+
+============================== 10:36:35.759090 | 86ebf733-c927-4050-83ef-f07a500fdfca ==============================
+[0m10:36:35.759090 [info ] [MainThread]: Running with dbt=1.9.6
+[0m10:36:35.759090 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'c:\\Projects 2025 - SSD\\taxi-dbt-airflow\\dags\\dbt\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt ', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m10:36:36.040897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '86ebf733-c927-4050-83ef-f07a500fdfca', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027408533BB0>]}
+[0m10:36:36.106609 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m10:36:36.108811 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m10:36:36.109265 [debug] [MainThread]: Command `cli deps` succeeded at 10:36:36.109265 after 0.46 seconds
+[0m10:36:36.119256 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027406840370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027408533BB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027408533D60>]}
+[0m10:36:36.120256 [debug] [MainThread]: Flushing usage events
+[0m10:36:37.464243 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:18:26.024262 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000247C8DF8370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000247C7D936A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000247C7D934C0>]}
+
+
+============================== 13:18:26.031028 | 9925a083-8104-4790-9d32-2beceb609543 ==============================
+[0m13:18:26.031028 [info ] [MainThread]: Running with dbt=1.9.6
+[0m13:18:26.032790 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Projects 2025 - SSD\\taxi-dbt-airflow\\dags\\dbt\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt debug', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:18:26.070698 [info ] [MainThread]: dbt version: 1.9.6
+[0m13:18:26.072410 [info ] [MainThread]: python version: 3.10.3
+[0m13:18:26.074129 [info ] [MainThread]: python path: C:\Users\ASUS\AppData\Local\Programs\Python\Python310\python.exe
+[0m13:18:26.077189 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m13:18:31.868193 [info ] [MainThread]: Using profiles dir at C:\Users\ASUS\.dbt
+[0m13:18:31.869962 [info ] [MainThread]: Using profiles.yml file at C:\Users\ASUS\.dbt\profiles.yml
+[0m13:18:31.871156 [info ] [MainThread]: Using dbt_project.yml file at C:\Projects 2025 - SSD\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+[0m13:18:31.872890 [info ] [MainThread]: adapter type: bigquery
+[0m13:18:31.874097 [info ] [MainThread]: adapter version: 1.9.2
+[0m13:18:32.085671 [info ] [MainThread]: Configuration:
+[0m13:18:32.086832 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:18:32.088575 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:18:32.089662 [info ] [MainThread]: Required dependencies:
+[0m13:18:32.090322 [debug] [MainThread]: Executing "git --help"
+[0m13:18:32.152892 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:18:32.154060 [debug] [MainThread]: STDERR: "b''"
+[0m13:18:32.155730 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:18:32.156985 [info ] [MainThread]: Connection:
+[0m13:18:32.159102 [info ] [MainThread]:   method: service-account
+[0m13:18:32.160933 [info ] [MainThread]:   database: gcp-refresh-2025
+[0m13:18:32.162129 [info ] [MainThread]:   execution_project: gcp-refresh-2025
+[0m13:18:32.163716 [info ] [MainThread]:   schema: dbt_taxi
+[0m13:18:32.164886 [info ] [MainThread]:   location: US
+[0m13:18:32.166542 [info ] [MainThread]:   priority: interactive
+[0m13:18:32.167742 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:18:32.169053 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:18:32.170517 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:18:32.171690 [info ] [MainThread]:   job_retries: 1
+[0m13:18:32.172897 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:18:32.174613 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:18:32.175874 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:18:32.177561 [info ] [MainThread]:   client_id: None
+[0m13:18:32.178867 [info ] [MainThread]:   token_uri: None
+[0m13:18:32.180141 [info ] [MainThread]:   compute_region: None
+[0m13:18:32.182012 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:18:32.183975 [info ] [MainThread]:   gcs_bucket: None
+[0m13:18:32.185588 [info ] [MainThread]:   dataproc_batch: None
+[0m13:18:32.187369 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m13:18:34.172065 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:18:34.173284 [debug] [MainThread]: On debug: select 1 as id
+[0m13:18:34.175122 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:18:34.176896 [debug] [MainThread]: BigQuery adapter: Got an error when attempting to create a bigquery " "client: '[Errno 2] No such file or directory: '/.google/credentials/google_credentials.json''
+[0m13:18:34.179256 [debug] [MainThread]: BigQuery adapter: Unhandled error while running:
+select 1 as id
+[0m13:18:34.181062 [debug] [MainThread]: BigQuery adapter: Database Error
+  [Errno 2] No such file or directory: '/.google/credentials/google_credentials.json'
+[0m13:18:34.182831 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m13:18:34.184596 [info ] [MainThread]: [31m1 check failed:[0m
+[0m13:18:34.186980 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >'NoneType' object has no attribute 'close'
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m13:18:34.191451 [debug] [MainThread]: Command `dbt debug` failed at 13:18:34.190992 after 8.33 seconds
+[0m13:18:34.193821 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000247C8DF8370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000247E55BD450>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000247E55BD090>]}
+[0m13:18:34.195634 [debug] [MainThread]: Flushing usage events
+[0m13:18:40.403903 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:18:49.743064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C6B70370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C8863700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C8863520>]}
+
+
+============================== 13:18:49.749358 | c01866ad-26a8-4141-b954-17249a87f301 ==============================
+[0m13:18:49.749358 [info ] [MainThread]: Running with dbt=1.9.6
+[0m13:18:49.751277 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'c:\\Projects 2025 - SSD\\taxi-dbt-airflow\\dags\\dbt\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:18:50.033647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c01866ad-26a8-4141-b954-17249a87f301', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C8863790>]}
+[0m13:18:50.064423 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m13:18:50.066772 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m13:18:50.069709 [debug] [MainThread]: Command `cli deps` succeeded at 13:18:50.069110 after 0.47 seconds
+[0m13:18:50.070271 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C6B70370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C8863790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000231C8863D60>]}
+[0m13:18:50.071371 [debug] [MainThread]: Flushing usage events
+[0m13:18:51.138055 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:21:56.949098 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C758C340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C6533670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C6533490>]}
+
+
+============================== 13:21:56.952586 | b8cd6ea9-2b97-40e5-8b49-4a05b1b96381 ==============================
+[0m13:21:56.952586 [info ] [MainThread]: Running with dbt=1.9.6
+[0m13:21:56.953795 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'C:\\Projects 2025 - SSD\\taxi-dbt-airflow\\dags\\dbt\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:21:56.971773 [info ] [MainThread]: dbt version: 1.9.6
+[0m13:21:56.972359 [info ] [MainThread]: python version: 3.10.3
+[0m13:21:56.973273 [info ] [MainThread]: python path: C:\Users\ASUS\AppData\Local\Programs\Python\Python310\python.exe
+[0m13:21:56.974527 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m13:21:59.943992 [info ] [MainThread]: Using profiles dir at C:\Users\ASUS\.dbt
+[0m13:21:59.945314 [info ] [MainThread]: Using profiles.yml file at C:\Users\ASUS\.dbt\profiles.yml
+[0m13:21:59.946505 [info ] [MainThread]: Using dbt_project.yml file at C:\Projects 2025 - SSD\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+[0m13:21:59.948703 [info ] [MainThread]: adapter type: bigquery
+[0m13:21:59.950337 [info ] [MainThread]: adapter version: 1.9.2
+[0m13:22:00.142196 [info ] [MainThread]: Configuration:
+[0m13:22:00.143271 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:22:00.143813 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:22:00.144897 [info ] [MainThread]: Required dependencies:
+[0m13:22:00.145991 [debug] [MainThread]: Executing "git --help"
+[0m13:22:00.219022 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:22:00.221055 [debug] [MainThread]: STDERR: "b''"
+[0m13:22:00.222798 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:22:00.224375 [info ] [MainThread]: Connection:
+[0m13:22:00.226610 [info ] [MainThread]:   method: service-account
+[0m13:22:00.228217 [info ] [MainThread]:   database: gcp-refresh-2025
+[0m13:22:00.229833 [info ] [MainThread]:   execution_project: gcp-refresh-2025
+[0m13:22:00.230906 [info ] [MainThread]:   schema: dbt_taxi
+[0m13:22:00.232580 [info ] [MainThread]:   location: US
+[0m13:22:00.233724 [info ] [MainThread]:   priority: interactive
+[0m13:22:00.235500 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:22:00.237392 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:22:00.239098 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:22:00.242775 [info ] [MainThread]:   job_retries: 1
+[0m13:22:00.245168 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:22:00.247050 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:22:00.248823 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:22:00.250589 [info ] [MainThread]:   client_id: None
+[0m13:22:00.252769 [info ] [MainThread]:   token_uri: None
+[0m13:22:00.254676 [info ] [MainThread]:   compute_region: None
+[0m13:22:00.256581 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:22:00.258862 [info ] [MainThread]:   gcs_bucket: None
+[0m13:22:00.260747 [info ] [MainThread]:   dataproc_batch: None
+[0m13:22:00.262805 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m13:22:01.258137 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:22:01.259366 [debug] [MainThread]: On debug: select 1 as id
+[0m13:22:01.259956 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:22:25.538295 [error] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:2438635a-c166-406d-ac9a-89b5130a8f0c&page=queryresults
+[0m13:22:25.539486 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m13:22:25.540591 [info ] [MainThread]: [31m1 check failed:[0m
+[0m13:22:25.541448 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  Access Denied: Project gcp-refresh-2025: User does not have bigquery.jobs.create permission in project gcp-refresh-2025.
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m13:22:25.542645 [debug] [MainThread]: Command `dbt debug` failed at 13:22:25.542645 after 28.70 seconds
+[0m13:22:25.543308 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:22:25.543966 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C758C340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230C91D6D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000230E3D61BA0>]}
+[0m13:22:25.544594 [debug] [MainThread]: Flushing usage events
+[0m13:22:28.276398 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:23:30.284513 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015284B08370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015283AB36A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015283AB34C0>]}
+
+
+============================== 13:23:30.288789 | 0b05733e-385d-405b-a3ab-dde0940042a4 ==============================
+[0m13:23:30.288789 [info ] [MainThread]: Running with dbt=1.9.6
+[0m13:23:30.290751 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'log_path': 'C:\\Projects 2025 - SSD\\taxi-dbt-airflow\\dags\\dbt\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt debug', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m13:23:30.308311 [info ] [MainThread]: dbt version: 1.9.6
+[0m13:23:30.309516 [info ] [MainThread]: python version: 3.10.3
+[0m13:23:30.310416 [info ] [MainThread]: python path: C:\Users\ASUS\AppData\Local\Programs\Python\Python310\python.exe
+[0m13:23:30.311475 [info ] [MainThread]: os info: Windows-10-10.0.22631-SP0
+[0m13:23:33.519236 [info ] [MainThread]: Using profiles dir at C:\Users\ASUS\.dbt
+[0m13:23:33.520345 [info ] [MainThread]: Using profiles.yml file at C:\Users\ASUS\.dbt\profiles.yml
+[0m13:23:33.521068 [info ] [MainThread]: Using dbt_project.yml file at C:\Projects 2025 - SSD\taxi-dbt-airflow\dags\dbt\dbt_project.yml
+[0m13:23:33.522282 [info ] [MainThread]: adapter type: bigquery
+[0m13:23:33.524060 [info ] [MainThread]: adapter version: 1.9.2
+[0m13:23:33.660524 [info ] [MainThread]: Configuration:
+[0m13:23:33.661734 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m13:23:33.662334 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m13:23:33.663455 [info ] [MainThread]: Required dependencies:
+[0m13:23:33.664082 [debug] [MainThread]: Executing "git --help"
+[0m13:23:33.716083 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m13:23:33.716955 [debug] [MainThread]: STDERR: "b''"
+[0m13:23:33.717553 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m13:23:33.718691 [info ] [MainThread]: Connection:
+[0m13:23:33.719378 [info ] [MainThread]:   method: service-account
+[0m13:23:33.719988 [info ] [MainThread]:   database: gcp-refresh-2025
+[0m13:23:33.720634 [info ] [MainThread]:   execution_project: gcp-refresh-2025
+[0m13:23:33.721828 [info ] [MainThread]:   schema: dbt_taxi
+[0m13:23:33.722429 [info ] [MainThread]:   location: US
+[0m13:23:33.723592 [info ] [MainThread]:   priority: interactive
+[0m13:23:33.724796 [info ] [MainThread]:   maximum_bytes_billed: None
+[0m13:23:33.726110 [info ] [MainThread]:   impersonate_service_account: None
+[0m13:23:33.727188 [info ] [MainThread]:   job_retry_deadline_seconds: None
+[0m13:23:33.727922 [info ] [MainThread]:   job_retries: 1
+[0m13:23:33.728480 [info ] [MainThread]:   job_creation_timeout_seconds: None
+[0m13:23:33.729436 [info ] [MainThread]:   job_execution_timeout_seconds: 300
+[0m13:23:33.730636 [info ] [MainThread]:   timeout_seconds: 300
+[0m13:23:33.731738 [info ] [MainThread]:   client_id: None
+[0m13:23:33.732414 [info ] [MainThread]:   token_uri: None
+[0m13:23:33.733062 [info ] [MainThread]:   compute_region: None
+[0m13:23:33.733644 [info ] [MainThread]:   dataproc_cluster_name: None
+[0m13:23:33.734717 [info ] [MainThread]:   gcs_bucket: None
+[0m13:23:33.735378 [info ] [MainThread]:   dataproc_batch: None
+[0m13:23:33.736604 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m13:23:34.735650 [debug] [MainThread]: Acquiring new bigquery connection 'debug'
+[0m13:23:34.736745 [debug] [MainThread]: On debug: select 1 as id
+[0m13:23:34.737386 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:23:36.543058 [debug] [MainThread]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:0cae3400-c88c-422b-bf96-1ac8073177dd&page=queryresults
+[0m13:23:40.473327 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m13:23:40.474690 [info ] [MainThread]: [32mAll checks passed![0m
+[0m13:23:40.476485 [debug] [MainThread]: Command `dbt debug` succeeded at 13:23:40.476485 after 10.32 seconds
+[0m13:23:40.477775 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m13:23:40.478437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000015284B08370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000152A12883D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000152A128B6D0>]}
+[0m13:23:40.479020 [debug] [MainThread]: Flushing usage events
+[0m13:23:42.649387 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:28:26.798418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D0250310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D1F43670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D1F43490>]}
+
+
+============================== 10:28:26.809145 | 8e0c0497-17fd-460b-aa4b-efc2fd780d75 ==============================
+[0m10:28:26.809145 [info ] [MainThread]: Running with dbt=1.9.6
+[0m10:28:26.809218 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'c:\\Projects 2025 - SSD\\olist-ecom-elt-pipeline\\dags\\dbt\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:28:27.179632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8e0c0497-17fd-460b-aa4b-efc2fd780d75', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D1F42830>]}
+[0m10:28:27.248317 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m10:28:27.251341 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m10:28:27.251341 [debug] [MainThread]: Command `cli deps` succeeded at 10:28:27.251341 after 0.69 seconds
+[0m10:28:27.251341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D0250310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D1F42830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000150D1F43D00>]}
+[0m10:28:27.257353 [debug] [MainThread]: Flushing usage events
+[0m10:28:28.411614 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m12:19:45.456025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A059C03A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A076B36D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A076B34F0>]}
+
+
+============================== 12:19:45.460963 | f17b1f36-0cad-4855-a594-6c9d6194abe3 ==============================
+[0m12:19:45.460963 [info ] [MainThread]: Running with dbt=1.9.6
+[0m12:19:45.461962 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'c:\\Projects 2025 - SSD\\olist-ecom-elt-pipeline\\dags\\dbt\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'True'}
+[0m12:19:45.716093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f17b1f36-0cad-4855-a594-6c9d6194abe3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A0769A950>]}
+[0m12:19:45.749765 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m12:19:45.752762 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m12:19:45.754760 [debug] [MainThread]: Command `cli deps` succeeded at 12:19:45.754760 after 0.53 seconds
+[0m12:19:45.755762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A059C03A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A0769A950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020A04951600>]}
+[0m12:19:45.756773 [debug] [MainThread]: Flushing usage events
+[0m12:19:47.023394 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:39:52.808703 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD0EAE03A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD107D36D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD107D34F0>]}
+
+
+============================== 14:39:52.814954 | 138ba1d2-472d-4eb7-8d73-cb093a8b9a49 ==============================
+[0m14:39:52.814954 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:39:52.817978 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\ASUS\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'c:\\Projects 2025 - SSD\\olist-ecom-elt-pipeline\\dags\\dbt\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:39:53.213557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '138ba1d2-472d-4eb7-8d73-cb093a8b9a49', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD107B46D0>]}
+[0m14:39:53.264849 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m14:39:53.268309 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m14:39:53.271308 [debug] [MainThread]: Command `cli deps` succeeded at 14:39:53.271308 after 0.67 seconds
+[0m14:39:53.273309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD0EAE03A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD107B46D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD0DA624D0>]}
+[0m14:39:53.274308 [debug] [MainThread]: Flushing usage events
+[0m14:39:54.648525 [debug] [MainThread]: An error was encountered while trying to flush usage events
