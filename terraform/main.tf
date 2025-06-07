@@ -32,6 +32,6 @@ resource "google_storage_bucket" "auto-expire" {
 resource "google_bigquery_dataset" "dataset" {
   dataset_id = var.bq_dataset_name
   project    = var.project
-  location   = var.region
+  location   = var.location
 }
 

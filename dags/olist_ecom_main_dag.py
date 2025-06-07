@@ -25,19 +25,7 @@ DBT_PROFILE_PATH = os.environ.get("DBT_PROFILE_PATH")
 AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME")
 
 path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'trips_data_all')
-
-# FILES = [
-#     "olist_customers_dataset",
-#     "olist_geolocation_dataset",
-#     "olist_order_items_dataset",
-#     "olist_order_payments_dataset",
-#     "olist_order_reviews_dataset",
-#     "olist_orders_dataset",
-#     "olist_products_dataset",
-#     "olist_sellers_dataset",
-#     "product_category_name_translation"
-# ]
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'olist_ecom_all')
 
 FILES = [
     "olist_customers_dataset",
@@ -47,6 +35,15 @@ FILES = [
     "olist_products_dataset",
     "olist_sellers_dataset",
 ]
+
+profile_config = ProfileConfig(
+    profile_name="dbt_olist_ecom_profile",
+    target_name="dev",
+
+    # Use file path to the profiles.yml file
+    profiles_yml_filepath="/.dbt/profiles.yml",
+)
+
 
 def format_to_parquet(src_file):
     if not src_file.endswith('.csv'):
@@ -107,15 +104,7 @@ default_args = {
     "retries": 1,
 }
 
-profile_config = ProfileConfig(
-    profile_name="dbt_taxi_profile",
-    target_name="dev",
-
-    # Use file path to the profiles.yml file
-    profiles_yml_filepath="/.dbt/profiles.yml",
-)
-
-# NOTE: DAG declaration - using a Context Manager (an implicit way)
+# DAG declaration - using a Context Manager (an implicit way)
 with DAG(
     dag_id="ecom_main_dag",
     schedule="@daily",
@@ -128,6 +117,7 @@ with DAG(
     with TaskGroup(group_id="extract_load_tasks") as extract_load_group:
         
         for file in FILES:
+            
             check_file_task = PythonOperator(
                 task_id=f"check_local_{file}",
                 python_callable=check_file_exists,
@@ -150,6 +140,36 @@ with DAG(
                 "object_name": f"raw/{file}/{file}.parquet",
                 "local_file": f"{path_to_local_home}/datasets/parquet/{file}.parquet",
                 }
+            )         
+            
+            bigquery_external_table_task = BigQueryCreateExternalTableOperator(
+                task_id=f"bigquery_external_table_{file}_task",
+                table_resource={
+                    "tableReference": {
+                        "projectId": PROJECT_ID,
+                        "datasetId": BIGQUERY_DATASET,
+                        "tableId": file.replace("olist_", "").replace("_dataset", ""),
+                    },
+                    "externalDataConfiguration": {
+                        "sourceFormat": "PARQUET",
+                        "sourceUris": [f"gs://{BUCKET}/raw/{file}/{file}.parquet"],
+                    },
+                },
             )
+            
+            # Set task dependencies
+            check_file_task >> convert_to_parquet_task >> local_to_gcs_task >> bigquery_external_table_task
 
-            check_file_task >> convert_to_parquet_task >> local_to_gcs_task
+
+    dbt_task = DbtTaskGroup(
+        group_id="transform_tasks_dbt",
+        project_config=ProjectConfig(
+            f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
+        ),
+        profile_config=profile_config,
+        execution_config=ExecutionConfig(
+            dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
+        )
+    )
+    
+    extract_load_group >> dbt_task

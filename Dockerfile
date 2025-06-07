@@ -1,7 +1,6 @@
 FROM apache/airflow:2.9.2
 
 ENV AIRFLOW_HOME=/opt/airflow
-# ENV DBT_PROFILE_PATH=~/.dbt/
 
 USER root
 # Install necessary packages

@@ -915,3 +915,1195 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m14:39:53.273309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD0EAE03A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD107B46D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FD0DA624D0>]}
 [0m14:39:53.274308 [debug] [MainThread]: Flushing usage events
 [0m14:39:54.648525 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:22:18.485222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f14a0546060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f149fd848f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f149ff73bf0>]}
+
+
+============================== 14:22:18.496466 | dd648fa6-1950-4a0e-af01-fe2f2d401693 ==============================
+[0m14:22:18.496466 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:22:18.498741 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dags/dbt/logs', 'profiles_dir': '/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt', 'send_anonymous_usage_stats': 'True'}
+[0m14:22:18.518647 [info ] [MainThread]: target not specified in profile 'dbt_olist_ecom_profile', using 'default'
+[0m14:22:18.520862 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The profile 'dbt_olist_ecom_profile' does not have a target named 'default'. The valid target names for this profile are:
+   - dev
+[0m14:22:18.523646 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.13666542, "process_in_blocks": "0", "process_kernel_time": 0.165313, "process_mem_max_rss": "95700", "process_out_blocks": "0", "process_user_time": 2.107742}
+[0m14:22:18.525796 [debug] [MainThread]: Command `dbt docs generate` failed at 14:22:18.525563 after 0.14 seconds
+[0m14:22:18.527650 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f14a389b050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f149fbc3290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f14a0119760>]}
+[0m14:22:18.529653 [debug] [MainThread]: Flushing usage events
+[0m14:22:19.997104 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:26:23.610488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3d76b85700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3d75571520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3d74585550>]}
+
+
+============================== 14:26:23.631529 | 591a4193-da0f-4d4e-8a0e-810ca2fa5e20 ==============================
+[0m14:26:23.631529 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:26:23.633335 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/.dbt/profiles.yml', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/dags/dbt/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt/profiles.yml', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:26:23.640578 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dbt_olist_ecom_profile'
+[0m14:26:23.642624 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.11343466, "process_in_blocks": "0", "process_kernel_time": 0.089293, "process_mem_max_rss": "95680", "process_out_blocks": "0", "process_user_time": 2.073591}
+[0m14:26:23.644072 [debug] [MainThread]: Command `dbt docs generate` failed at 14:26:23.643935 after 0.12 seconds
+[0m14:26:23.645286 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3d7480b2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3d74585850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f3d74586990>]}
+[0m14:26:23.646538 [debug] [MainThread]: Flushing usage events
+[0m14:26:25.209331 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:31:28.791501 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc709078410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc7075edee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc707253e30>]}
+
+
+============================== 14:31:28.800896 | 1637968a-1d37-4895-a15c-44d5593b7504 ==============================
+[0m14:31:28.800896 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:31:28.802664 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/airflow/dags/dbt/logs', 'profiles_dir': '/.dbt/profiles.yml', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt/profiles.yml', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:31:28.812252 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dbt_olist_ecom_profile'
+[0m14:31:28.814320 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.10514351, "process_in_blocks": "0", "process_kernel_time": 0.129696, "process_mem_max_rss": "96012", "process_out_blocks": "0", "process_user_time": 1.546375}
+[0m14:31:28.816138 [debug] [MainThread]: Command `dbt docs generate` failed at 14:31:28.815990 after 0.11 seconds
+[0m14:31:28.817537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc706d27560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc706ce6810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fc707705b20>]}
+[0m14:31:28.819053 [debug] [MainThread]: Flushing usage events
+[0m14:31:30.336446 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:32:24.567648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9fa5e6900>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9fa2f0800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9fad202f0>]}
+
+
+============================== 14:32:24.575567 | 4532e52b-76ea-4cc0-b508-2d9e859447ae ==============================
+[0m14:32:24.575567 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:32:24.577320 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dags/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/.dbt/profiles.yml', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt/profiles.yml', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:32:24.585999 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'dbt_olist_ecom_profile'
+[0m14:32:24.587896 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.104659565, "process_in_blocks": "0", "process_kernel_time": 0.068903, "process_mem_max_rss": "95752", "process_out_blocks": "0", "process_user_time": 1.702888}
+[0m14:32:24.589499 [debug] [MainThread]: Command `dbt docs generate` failed at 14:32:24.589369 after 0.11 seconds
+[0m14:32:24.590813 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9fa2f63f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9fa54a5a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9fa2f0800>]}
+[0m14:32:24.592110 [debug] [MainThread]: Flushing usage events
+[0m14:32:26.054938 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:33:56.328015 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f62994be660>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6298f9e540>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6298d85e50>]}
+
+
+============================== 14:33:56.340603 | 492a5e3f-1346-462d-8d8e-3afd806eecf4 ==============================
+[0m14:33:56.340603 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:33:56.343212 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dags/dbt/logs', 'profiles_dir': '/.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:33:56.358403 [info ] [MainThread]: target not specified in profile 'dbt_olist_ecom_profile', using 'default'
+[0m14:33:56.360329 [error] [MainThread]: Encountered an error:
+Runtime Error
+  The profile 'dbt_olist_ecom_profile' does not have a target named 'default'. The valid target names for this profile are:
+   - dev
+[0m14:33:56.363052 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": false, "command_wall_clock_time": 0.16247739, "process_in_blocks": "0", "process_kernel_time": 0.180468, "process_mem_max_rss": "95812", "process_out_blocks": "0", "process_user_time": 1.935028}
+[0m14:33:56.364887 [debug] [MainThread]: Command `dbt docs generate` failed at 14:33:56.364687 after 0.16 seconds
+[0m14:33:56.366687 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6298bb7620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f6298a15e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f629c6eb020>]}
+[0m14:33:56.368344 [debug] [MainThread]: Flushing usage events
+[0m14:33:57.761285 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:38:04.975496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5078ae53a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5077e00770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5077e00410>]}
+
+
+============================== 14:38:04.983861 | fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7 ==============================
+[0m14:38:04.983861 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:38:04.985887 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/airflow/dags/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt --target dev', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m14:38:08.833613 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f504e8368a0>]}
+[0m14:38:08.975167 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f50787be510>]}
+[0m14:38:08.977980 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m14:38:09.467936 [debug] [MainThread]: checksum: 138d4a3299251970253cec0f0e7dacc4b1e9dfeac119dcf974371ed5cd150718, vars: {}, profile: , target: dev, version: 1.9.6
+[0m14:38:09.672559 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m14:38:09.674267 [debug] [MainThread]: previous checksum: 138d4a3299251970253cec0f0e7dacc4b1e9dfeac119dcf974371ed5cd150718, current checksum: dd6dc1e5178459e3de3bf2eeb7c86bed4be2266c311fce8c15d86eb4ff94e7ad
+[0m14:38:09.675743 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m14:38:09.678024 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m14:38:09.679946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f507811c200>]}
+[0m14:38:12.740162 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.dbt_taxi.marts
+- models.dbt_taxi.staging
+[0m14:38:12.762976 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f504e6ed940>]}
+[0m14:38:12.830624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f504e53cb90>]}
+[0m14:38:12.832432 [info ] [MainThread]: Found 2 models, 1 seed, 1 source, 493 macros
+[0m14:38:12.834023 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5077d1eff0>]}
+[0m14:38:12.838384 [info ] [MainThread]: 
+[0m14:38:12.840065 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:38:12.841479 [info ] [MainThread]: 
+[0m14:38:12.842998 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:38:12.850549 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_olist_ecom_all'
+[0m14:38:12.852778 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:38:13.638768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fb72d695-5e3d-4b7e-83e3-727dc1f9cbf7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f504e45cd40>]}
+[0m14:38:13.642869 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:38:13.667218 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:38:13.674823 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gcp-refresh-2025_olist_ecom_all, now model.dbt_olist_ecom.stg_olist_ecom__customer)
+[0m14:38:13.678996 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:38:13.731388 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__customer"
+[0m14:38:13.771152 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:38:13.773478 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:38:13.787013 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:38:13.789487 [debug] [Thread-1 (]: Began running node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:38:13.791661 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__customer, now seed.dbt_olist_ecom.product_category_name_translation)
+[0m14:38:13.800035 [debug] [Thread-1 (]: Began compiling node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:38:13.805464 [debug] [Thread-1 (]: Began executing node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:38:13.807042 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:38:13.814516 [debug] [Thread-1 (]: Finished running node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:38:13.823143 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_example
+[0m14:38:13.824689 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.dbt_olist_ecom.product_category_name_translation, now model.dbt_olist_ecom.stg_example)
+[0m14:38:13.826208 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_example
+[0m14:38:13.831898 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_example"
+[0m14:38:13.841746 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_example
+[0m14:38:13.843786 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:38:13.850533 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_example
+[0m14:38:13.854615 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:38:13.856272 [debug] [MainThread]: Connection 'model.dbt_olist_ecom.stg_example' was properly closed.
+[0m14:38:13.858660 [debug] [MainThread]: Command end result
+[0m14:38:14.051309 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m14:38:14.059004 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m14:38:14.073749 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dags/dbt/target/run_results.json
+[0m14:38:14.218493 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m14:38:14.220840 [info ] [MainThread]: Building catalog
+[0m14:38:14.230699 [debug] [ThreadPool]: Acquiring new bigquery connection 'gcp-refresh-2025.information_schema'
+[0m14:38:14.287021 [debug] [ThreadPool]: On gcp-refresh-2025.information_schema: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_olist_ecom_profile", "target_name": "dev", "connection_name": "gcp-refresh-2025.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `gcp-refresh-2025`.`olist_ecom_all`.__TABLES__ tables
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('product_category_name_translation')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_example')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__customer')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('customers')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMNS columns
+    join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m14:38:14.290942 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:38:15.549906 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:eac40796-0ed6-4ec6-a2a7-440de4809886&page=queryresults
+[0m14:38:17.828117 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:38:17.864585 [debug] [MainThread]: Wrote artifact CatalogArtifact to /opt/airflow/dags/dbt/target/catalog.json
+[0m14:38:17.932474 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m14:38:17.940343 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m14:38:17.942502 [info ] [MainThread]: Catalog written to /opt/airflow/dags/dbt/target/catalog.json
+[0m14:38:17.946483 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 13.062604, "process_in_blocks": "3424", "process_kernel_time": 0.676632, "process_mem_max_rss": "380012", "process_out_blocks": "0", "process_user_time": 10.614037}
+[0m14:38:17.948977 [debug] [MainThread]: Command `dbt docs generate` succeeded at 14:38:17.948753 after 13.07 seconds
+[0m14:38:17.950650 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m14:38:17.952752 [debug] [MainThread]: Connection 'gcp-refresh-2025.information_schema' was properly closed.
+[0m14:38:17.954623 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f507ba1f170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f507a1f29f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f504e45c230>]}
+[0m14:38:17.956404 [debug] [MainThread]: Flushing usage events
+[0m14:38:19.566265 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:56:29.237148 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aec6e9be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aec41dbe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aee17dd30>]}
+
+
+============================== 14:56:29.256721 | ed40a237-6d8b-4d17-b965-bd040f27c035 ==============================
+[0m14:56:29.256721 [info ] [MainThread]: Running with dbt=1.9.6
+[0m14:56:29.261589 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/dags/dbt/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt --target dev', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:56:33.981298 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aec68eed0>]}
+[0m14:56:34.129147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aec68d220>]}
+[0m14:56:34.131142 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m14:56:34.471422 [debug] [MainThread]: checksum: 138d4a3299251970253cec0f0e7dacc4b1e9dfeac119dcf974371ed5cd150718, vars: {}, profile: , target: dev, version: 1.9.6
+[0m14:56:34.478439 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m14:56:34.480153 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1ac297c7a0>]}
+[0m14:56:38.306759 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.dbt_taxi.marts
+- models.dbt_taxi.staging
+[0m14:56:38.330231 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1ac1100950>]}
+[0m14:56:38.367883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1ac2407ad0>]}
+[0m14:56:38.369978 [info ] [MainThread]: Found 2 models, 1 seed, 1 source, 493 macros
+[0m14:56:38.371891 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1ac2308b00>]}
+[0m14:56:38.377159 [info ] [MainThread]: 
+[0m14:56:38.384148 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:56:38.387104 [info ] [MainThread]: 
+[0m14:56:38.390148 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m14:56:38.407597 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_olist_ecom_all'
+[0m14:56:38.411174 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:56:39.311255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'ed40a237-6d8b-4d17-b965-bd040f27c035', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aedf19460>]}
+[0m14:56:39.313026 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:56:39.327639 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:56:39.329558 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gcp-refresh-2025_olist_ecom_all, now model.dbt_olist_ecom.stg_olist_ecom__customer)
+[0m14:56:39.331753 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:56:39.351766 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__customer"
+[0m14:56:39.372571 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:56:39.374115 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:39.380718 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m14:56:39.382550 [debug] [Thread-1 (]: Began running node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:56:39.384661 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__customer, now seed.dbt_olist_ecom.product_category_name_translation)
+[0m14:56:39.386100 [debug] [Thread-1 (]: Began compiling node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:56:39.389790 [debug] [Thread-1 (]: Began executing node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:56:39.391300 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:39.397670 [debug] [Thread-1 (]: Finished running node seed.dbt_olist_ecom.product_category_name_translation
+[0m14:56:39.399627 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_example
+[0m14:56:39.401795 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.dbt_olist_ecom.product_category_name_translation, now model.dbt_olist_ecom.stg_example)
+[0m14:56:39.403122 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_example
+[0m14:56:39.407512 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_example"
+[0m14:56:39.417313 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_example
+[0m14:56:39.419118 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:56:39.424402 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_example
+[0m14:56:39.428285 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:56:39.430518 [debug] [MainThread]: Connection 'model.dbt_olist_ecom.stg_example' was properly closed.
+[0m14:56:39.433299 [debug] [MainThread]: Command end result
+[0m14:56:39.624633 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m14:56:39.636889 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m14:56:39.663827 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dags/dbt/target/run_results.json
+[0m14:56:39.696731 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m14:56:39.698206 [info ] [MainThread]: Building catalog
+[0m14:56:39.712436 [debug] [ThreadPool]: Acquiring new bigquery connection 'gcp-refresh-2025.information_schema'
+[0m14:56:39.800814 [debug] [ThreadPool]: On gcp-refresh-2025.information_schema: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_olist_ecom_profile", "target_name": "dev", "connection_name": "gcp-refresh-2025.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `gcp-refresh-2025`.`olist_ecom_all`.__TABLES__ tables
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__customer')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('customers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('product_category_name_translation')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_example')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMNS columns
+    join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m14:56:39.819637 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:56:41.041796 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:1df53ded-fc62-4517-bec1-f5cb44b160aa&page=queryresults
+[0m14:56:43.222039 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:56:43.256188 [debug] [MainThread]: Wrote artifact CatalogArtifact to /opt/airflow/dags/dbt/target/catalog.json
+[0m14:56:43.361460 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m14:56:43.380509 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m14:56:43.385680 [info ] [MainThread]: Catalog written to /opt/airflow/dags/dbt/target/catalog.json
+[0m14:56:43.391376 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 14.302256, "process_in_blocks": "0", "process_kernel_time": 1.053861, "process_mem_max_rss": "380628", "process_out_blocks": "0", "process_user_time": 13.680124}
+[0m14:56:43.398470 [debug] [MainThread]: Command `dbt docs generate` succeeded at 14:56:43.398142 after 14.31 seconds
+[0m14:56:43.403084 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m14:56:43.410592 [debug] [MainThread]: Connection 'gcp-refresh-2025.information_schema' was properly closed.
+[0m14:56:43.413234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aec0e5250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1aec28d4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f1ac2338da0>]}
+[0m14:56:43.418191 [debug] [MainThread]: Flushing usage events
+[0m14:56:44.846198 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m02:30:27.860769 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70cab69dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70cbf9c0b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70cb750350>]}
+
+
+============================== 02:30:27.878984 | e0f9d22d-5297-4b8c-8516-aeb4fb5171f9 ==============================
+[0m02:30:27.878984 [info ] [MainThread]: Running with dbt=1.9.6
+[0m02:30:27.881905 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/opt/airflow/dags/dbt/logs', 'profiles_dir': '/.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt --target dev', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m02:30:36.108091 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e0f9d22d-5297-4b8c-8516-aeb4fb5171f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70ccc9b650>]}
+[0m02:30:36.386736 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e0f9d22d-5297-4b8c-8516-aeb4fb5171f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70cb149c40>]}
+[0m02:30:36.408475 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m02:30:37.762006 [debug] [MainThread]: checksum: 138d4a3299251970253cec0f0e7dacc4b1e9dfeac119dcf974371ed5cd150718, vars: {}, profile: , target: dev, version: 1.9.6
+[0m02:30:39.242176 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m02:30:39.246852 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m02:30:39.285554 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.dbt_taxi.staging
+- models.dbt_taxi.marts
+[0m02:30:39.491381 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e0f9d22d-5297-4b8c-8516-aeb4fb5171f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a13ca000>]}
+[0m02:30:39.722944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e0f9d22d-5297-4b8c-8516-aeb4fb5171f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a0fda780>]}
+[0m02:30:39.734701 [info ] [MainThread]: Found 2 models, 1 seed, 1 source, 493 macros
+[0m02:30:39.738105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0f9d22d-5297-4b8c-8516-aeb4fb5171f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a1239d90>]}
+[0m02:30:39.747681 [info ] [MainThread]: 
+[0m02:30:39.796875 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m02:30:39.802330 [info ] [MainThread]: 
+[0m02:30:39.805156 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m02:30:39.828487 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_olist_ecom_all'
+[0m02:30:39.837143 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:30:40.972430 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e0f9d22d-5297-4b8c-8516-aeb4fb5171f9', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a13c8500>]}
+[0m02:30:40.980152 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:30:41.018814 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m02:30:41.021705 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gcp-refresh-2025_olist_ecom_all, now model.dbt_olist_ecom.stg_olist_ecom__customer)
+[0m02:30:41.024283 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m02:30:41.064475 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__customer"
+[0m02:30:41.104711 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m02:30:41.117656 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:30:41.139172 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m02:30:41.147956 [debug] [Thread-1 (]: Began running node seed.dbt_olist_ecom.product_category_name_translation
+[0m02:30:41.151865 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__customer, now seed.dbt_olist_ecom.product_category_name_translation)
+[0m02:30:41.168345 [debug] [Thread-1 (]: Began compiling node seed.dbt_olist_ecom.product_category_name_translation
+[0m02:30:41.180252 [debug] [Thread-1 (]: Began executing node seed.dbt_olist_ecom.product_category_name_translation
+[0m02:30:41.185211 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:30:41.197528 [debug] [Thread-1 (]: Finished running node seed.dbt_olist_ecom.product_category_name_translation
+[0m02:30:41.208245 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_example
+[0m02:30:41.210947 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.dbt_olist_ecom.product_category_name_translation, now model.dbt_olist_ecom.stg_example)
+[0m02:30:41.214107 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_example
+[0m02:30:41.229398 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_example"
+[0m02:30:41.247612 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_example
+[0m02:30:41.250313 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m02:30:41.267437 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_example
+[0m02:30:41.278526 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:30:41.280556 [debug] [MainThread]: Connection 'model.dbt_olist_ecom.stg_example' was properly closed.
+[0m02:30:41.283891 [debug] [MainThread]: Command end result
+[0m02:30:41.600281 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m02:30:41.624686 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m02:30:41.683211 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dags/dbt/target/run_results.json
+[0m02:30:41.767850 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m02:30:41.773059 [info ] [MainThread]: Building catalog
+[0m02:30:41.792898 [debug] [ThreadPool]: Acquiring new bigquery connection 'gcp-refresh-2025.information_schema'
+[0m02:30:41.851920 [debug] [ThreadPool]: On gcp-refresh-2025.information_schema: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_olist_ecom_profile", "target_name": "dev", "connection_name": "gcp-refresh-2025.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `gcp-refresh-2025`.`olist_ecom_all`.__TABLES__ tables
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('customers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_example')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__customer')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('product_category_name_translation')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMNS columns
+    join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m02:30:41.861787 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:30:43.145872 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:e9c00c2a-ef16-4a3d-bac0-f7b30c8edaa1&page=queryresults
+[0m02:30:45.363579 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m02:30:45.477265 [debug] [MainThread]: Wrote artifact CatalogArtifact to /opt/airflow/dags/dbt/target/catalog.json
+[0m02:30:45.662090 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m02:30:45.676008 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m02:30:45.680835 [info ] [MainThread]: Catalog written to /opt/airflow/dags/dbt/target/catalog.json
+[0m02:30:45.696811 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 18.214754, "process_in_blocks": "385072", "process_kernel_time": 2.197971, "process_mem_max_rss": "376456", "process_out_blocks": "0", "process_user_time": 15.406059}
+[0m02:30:45.711181 [debug] [MainThread]: Command `dbt docs generate` succeeded at 02:30:45.710832 after 18.24 seconds
+[0m02:30:45.714069 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m02:30:45.719726 [debug] [MainThread]: Connection 'gcp-refresh-2025.information_schema' was properly closed.
+[0m02:30:45.732011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70cbf9c0b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a141e6c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a6079370>]}
+[0m02:30:45.735515 [debug] [MainThread]: Flushing usage events
+[0m02:30:47.114023 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:34:16.269064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a98ff8e60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a99a76fc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f5a9938ad80>]}
+
+
+============================== 06:34:16.315767 | 3d052627-e2dd-4cc3-a1f2-9253fc2bb93c ==============================
+[0m06:34:16.315767 [info ] [MainThread]: Running with dbt=1.9.6
+[0m06:34:16.329808 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/opt/airflow/dags/dbt/logs', 'debug': 'False', 'profiles_dir': '/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt --target dev', 'send_anonymous_usage_stats': 'True'}
+[0m07:22:38.001440 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421d403a10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421a6f6f00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421b002db0>]}
+
+
+============================== 07:22:38.079399 | 6b235d92-60ff-48cd-992a-0da690a3b815 ==============================
+[0m07:22:38.079399 [info ] [MainThread]: Running with dbt=1.9.6
+[0m07:22:38.082638 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/airflow/dags/dbt/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dags/dbt --profiles-dir /.dbt --target dev', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:24:23.059047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421afa70e0>]}
+[0m07:24:23.504761 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421abef2f0>]}
+[0m07:24:23.543708 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m07:24:25.007404 [debug] [MainThread]: checksum: 138d4a3299251970253cec0f0e7dacc4b1e9dfeac119dcf974371ed5cd150718, vars: {}, profile: , target: dev, version: 1.9.6
+[0m07:24:25.896373 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m07:24:25.904385 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421aa5c320>]}
+[0m07:25:09.812906 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.dbt_taxi.staging
+- models.dbt_taxi.marts
+[0m07:25:10.102590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f41f0fa9490>]}
+[0m07:25:12.621323 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f41f0f2daf0>]}
+[0m07:25:12.623666 [info ] [MainThread]: Found 4 models, 1 seed, 6 sources, 493 macros
+[0m07:25:12.936865 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f41f0e072c0>]}
+[0m07:25:13.503748 [info ] [MainThread]: 
+[0m07:25:14.073753 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m07:25:14.234894 [info ] [MainThread]: 
+[0m07:25:14.238466 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m07:25:14.548906 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_olist_ecom_all'
+[0m07:25:14.718864 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:25:16.209575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '6b235d92-60ff-48cd-992a-0da690a3b815', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f41efd0db50>]}
+[0m07:25:16.215783 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:25:16.305022 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m07:25:16.313167 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gcp-refresh-2025_olist_ecom_all, now model.dbt_olist_ecom.stg_olist_ecom__customer)
+[0m07:25:16.327743 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m07:25:16.387813 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__customer"
+[0m07:25:16.474001 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m07:25:16.478428 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:25:16.503463 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__customer
+[0m07:25:16.522354 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m07:25:16.526195 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__customer, now model.dbt_olist_ecom.stg_olist_ecom__order_items)
+[0m07:25:16.532052 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m07:25:16.541689 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__order_items"
+[0m07:25:16.575376 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m07:25:16.587513 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:25:16.605244 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m07:25:16.608773 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m07:25:16.619722 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__order_items, now model.dbt_olist_ecom.stg_olist_ecom__products)
+[0m07:25:16.623674 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m07:25:16.636203 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__products"
+[0m07:25:16.694725 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m07:25:16.697660 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:25:16.714756 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m07:25:16.718230 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m07:25:16.726451 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__products, now model.dbt_olist_ecom.stg_olist_ecom__sellers)
+[0m07:25:16.767371 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m07:25:16.780242 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__sellers"
+[0m07:25:16.835594 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m07:25:16.842006 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:25:16.890189 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m07:25:16.917790 [debug] [Thread-1 (]: Began running node seed.dbt_olist_ecom.product_category_name_translation
+[0m07:25:16.935039 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__sellers, now seed.dbt_olist_ecom.product_category_name_translation)
+[0m07:25:16.944248 [debug] [Thread-1 (]: Began compiling node seed.dbt_olist_ecom.product_category_name_translation
+[0m07:25:16.969534 [debug] [Thread-1 (]: Began executing node seed.dbt_olist_ecom.product_category_name_translation
+[0m07:25:16.992389 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:25:17.019155 [debug] [Thread-1 (]: Finished running node seed.dbt_olist_ecom.product_category_name_translation
+[0m07:25:17.033145 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:25:17.037383 [debug] [MainThread]: Connection 'seed.dbt_olist_ecom.product_category_name_translation' was properly closed.
+[0m07:25:17.045167 [debug] [MainThread]: Command end result
+[0m07:25:17.539800 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m07:25:17.560102 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m07:25:17.597386 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dags/dbt/target/run_results.json
+[0m07:25:17.689050 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m07:25:17.691380 [info ] [MainThread]: Building catalog
+[0m07:25:17.753211 [debug] [ThreadPool]: Acquiring new bigquery connection 'gcp-refresh-2025.information_schema'
+[0m07:25:18.014307 [debug] [ThreadPool]: On gcp-refresh-2025.information_schema: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_olist_ecom_profile", "target_name": "dev", "connection_name": "gcp-refresh-2025.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `gcp-refresh-2025`.`olist_ecom_all`.__TABLES__ tables
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__customer')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__products')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('order_payments')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__sellers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('products')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('order_items')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('product_category_name_translation')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__order_items')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('orders')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('sellers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('customers')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMNS columns
+    join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m07:25:18.023729 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:25:19.160181 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:d70f5975-626e-4de3-aa9a-a26b5837180a&page=queryresults
+[0m07:25:21.173087 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m07:25:21.247306 [debug] [MainThread]: Wrote artifact CatalogArtifact to /opt/airflow/dags/dbt/target/catalog.json
+[0m07:25:21.418689 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dags/dbt/target/manifest.json
+[0m07:25:21.431841 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dags/dbt/target/semantic_manifest.json
+[0m07:25:21.444005 [info ] [MainThread]: Catalog written to /opt/airflow/dags/dbt/target/catalog.json
+[0m07:25:21.472893 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 164.96117, "process_in_blocks": "6400", "process_kernel_time": 24.252544, "process_mem_max_rss": "382656", "process_out_blocks": "0", "process_user_time": 39.42556}
+[0m07:25:21.475760 [debug] [MainThread]: Command `dbt docs generate` succeeded at 07:25:21.475468 after 164.96 seconds
+[0m07:25:21.478011 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m07:25:21.480616 [debug] [MainThread]: Connection 'gcp-refresh-2025.information_schema' was properly closed.
+[0m07:25:21.488926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f421ab7d4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f41efc307d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f41f0e06fc0>]}
+[0m07:25:21.493297 [debug] [MainThread]: Flushing usage events
+[0m07:25:23.046028 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:00:05.566978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdd7daf90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdd74d970>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfddbeb260>]}
+
+
+============================== 06:00:05.575091 | 9492e3b6-3e1f-41c4-b946-e8768dcca182 ==============================
+[0m06:00:05.575091 [info ] [MainThread]: Running with dbt=1.9.6
+[0m06:00:05.577010 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/opt/airflow/dags/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/home/airflow/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt deps', 'send_anonymous_usage_stats': 'True'}
+[0m06:00:05.727019 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9492e3b6-3e1f-41c4-b946-e8768dcca182', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdf2170b0>]}
+[0m06:00:06.028225 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-pbrx25gj'
+[0m06:00:06.030418 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m06:00:06.666018 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m06:00:06.667767 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m06:00:06.759358 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m06:00:06.778901 [info ] [MainThread]: Updating lock file in file path: /opt/airflow/dags/dbt/package-lock.yml
+[0m06:00:06.833663 [debug] [MainThread]: Set downloads directory='/tmp/dbt-downloads-c8t6rioo'
+[0m06:00:06.841192 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m06:00:11.787279 [info ] [MainThread]: Installed from version 1.1.1
+[0m06:00:11.790101 [info ] [MainThread]: Updated version available: 1.3.0
+[0m06:00:11.797118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '9492e3b6-3e1f-41c4-b946-e8768dcca182', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdc796330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdc7961b0>]}
+[0m06:00:11.808249 [info ] [MainThread]: 
+[0m06:00:11.813917 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m06:00:11.826742 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 6.337219, "process_in_blocks": "0", "process_kernel_time": 0.459701, "process_mem_max_rss": "99324", "process_out_blocks": "200", "process_user_time": 2.287013}
+[0m06:00:11.831639 [debug] [MainThread]: Command `dbt deps` succeeded at 06:00:11.831281 after 6.34 seconds
+[0m06:00:11.834537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdcdef440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdcb708f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fbfdd5987a0>]}
+[0m06:00:11.837147 [debug] [MainThread]: Flushing usage events
+[0m06:00:13.401651 [debug] [MainThread]: An error was encountered while trying to flush usage events

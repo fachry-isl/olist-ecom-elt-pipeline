@@ -15,13 +15,16 @@ x-airflow-common:
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
-    # GCS Variables
+    # GCP Variables
     GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/google_credentials.json
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/google_credentials.json'
     GCP_PROJECT_ID: 'gcp-refresh-2025'
-    GCP_GCS_BUCKET: 'gcp-refresh-2025-olist-ecom-data'
+    GCP_GCS_BUCKET: 'gcp-refresh-2025-olist-ecom'
+    BIGQUERY_DATASET: 'olist_ecom_all'
     # DBT Variables
     DBT_PROFILE_PATH: /.dbt/profiles.yml
+    # DBT Cosmos
+    AIRFLOW__COSMOS__DBT_DOCS_DIR: "/opt/airflow/dags/dbt/target"
 
   volumes:
     - ./dags:/opt/airflow/dags

@@ -1,21 +1,100 @@
 version: 2
 
 sources:
-  - name: trips_data_all
+  - name: olist_ecom_all
     database: gcp-refresh-2025
     tables:
-      - name: external_table
-        description: "Taxi trips data from NYC"
+      - name: customers
+        description: "Source table containing customer information from the Olist e-commerce dataset."
         columns:
-          - name: trip_id
-            description: "Unique identifier for each trip"
-          - name: pickup_datetime
-            description: "Datetime when the trip started"
-          - name: dropoff_datetime
-            description: "Datetime when the trip ended"
-          - name: passenger_count
-            description: "Number of passengers in the trip"
-          - name: trip_distance
-            description: "Distance of the trip in miles"
-          - name: fare_amount
-            description: "Total fare amount for the trip"
+          - name: customer_id
+            description: "Unique identifier for the customer - database identifier - auto increment."
+          - name: customer_unique_id
+            description: "Unique identifier for the customer across different system - business-level unique identifier."
+          - name: customer_zip_code_prefix
+            description: "Prefix of the customer’s zip code."
+          - name: customer_city
+            description: "Customer's city."
+          - name: customer_state
+            description: "Customer's state."
+      - name: sellers
+        description: "Source table containing seller information from the Olist e-commerce dataset."
+        columns:
+          - name: seller_id
+            description: "Unique identifier for the seller."
+          - name: seller_zip_code_prefix
+            description: "Prefix of the seller’s zip code."
+          - name: seller_city
+            description: "Seller's city."
+          - name: seller_state
+            description: "Seller's state."
+      - name: products
+        description: "Source table containing product information from the Olist e-commerce dataset."
+        columns:
+          - name: product_id
+            description: "Unique identifier for the product."
+          - name: product_category_name
+            description: "Category of the product."
+          - name: product_name_lenght
+            description: "Length of the product name."
+          - name: product_description_lenght
+            description: "Length of the product description."
+          - name: product_photos_qty
+            description: "Number of photos associated with the product."
+          - name: product_weight_g
+            description: "Weight of the product in grams."
+          - name: product_length_cm
+            description: "Length of the product in centimeters."
+          - name: product_height_cm
+            description: "Height of the product in centimeters."
+          - name: product_width_cm
+            description: "Width of the product in centimeters."
+      - name: orders
+        description: "Source table containing order information from the Olist e-commerce dataset."
+        columns:
+          - name: order_id
+            description: "Unique identifier for the order."
+          - name: customer_id
+            description: "Unique identifier for the customer who placed the order."
+          - name: order_status
+            description: "Current status of the order."
+          - name: order_purchase_timestamp
+            description: "Timestamp when the order was purchased."
+          - name: order_approved_at
+            description: "Timestamp when the order was approved."
+          - name: order_delivered_carrier_date
+            description: "Timestamp when the order was delivered to the carrier."
+          - name: order_delivered_customer_date
+            description: "Timestamp when the order was delivered to the customer."
+          - name: order_estimated_delivery_date
+            description: "Estimated delivery date for the order."
+      - name: order_payments
+        description: "Source table containing payment information for orders from the Olist e-commerce dataset."
+        columns:
+          - name: order_id
+            description: "Unique identifier for the order."
+          - name: payment_sequential
+            description: "Sequential number of the payment method used for the order."
+          - name: payment_type
+            description: "Type of payment method used (e.g., credit card, boleto)."
+          - name: payment_installments
+            description: "Number of installments for the payment."
+          - name: payment_value
+            description: "Total value of the payment."
+      - name: order_items
+        description: "Source table containing item information for orders from the Olist e-commerce dataset."
+        columns:
+          - name: order_id
+            description: "Unique identifier for the order."
+          - name: order_item_id
+            description: "Unique identifier for the item within the order."
+          - name: product_id
+            description: "Unique identifier for the product."
+          - name: seller_id
+            description: "Unique identifier for the seller of the product."
+          - name: shipping_limit_date
+            description: "Deadline for shipping the item."
+          - name: price
+            description: "Price of the item."
+          - name: freight_value
+            description: "Freight value associated with the item."

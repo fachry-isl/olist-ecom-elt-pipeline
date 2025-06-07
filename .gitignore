@@ -10,6 +10,7 @@ tmp/*
 dags/__pycache__
 dags/*.pyc
 dags/test
+dags/dbt/target
 
 # Terraform
 # Local .terraform directories
@@ -49,3 +50,7 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+
+# DBT
+dbt_packages/

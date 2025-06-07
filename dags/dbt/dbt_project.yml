@@ -1,13 +1,14 @@
 version: 2
 
-name: "dbt_taxi"                # Required project name
+name: "dbt_olist_ecom"                # Required project name
 version: "1.0.0"                # Required version of the project
-profile: "dbt_taxi_profile"     # Required: matches a profile in profiles.yml
+profile: "dbt_olist_ecom_profile"     # Required: matches a profile in profiles.yml
 
 model-paths: ["models"]         # Required path to your models
+seed-paths: ["seeds"]
 
 models:
-  dbt_taxi:
+  dbt_olist_ecom:
     staging:
       +materialized: view
     marts:
