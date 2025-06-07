@@ -4,6 +4,7 @@ SELECT
     product_id,
     seller_id,
     shipping_limit_date,
-    price
+    price,
+    freight_value
 FROM
     {{source('olist_ecom_all', 'order_items')}}

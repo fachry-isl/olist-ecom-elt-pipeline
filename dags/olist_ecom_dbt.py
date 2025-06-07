@@ -1,21 +1,9 @@
 import os
-import logging
-from datetime import datetime
-
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.bash import BashOperator
 
-
-from google.cloud import storage
-from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExternalTableOperator
-
-import pyarrow.csv as pv
-import pyarrow.parquet as pq
-
-from cosmos import ProjectConfig, ProfileConfig, ExecutionConfig, DbtTaskGroup
-
-import shutil
+from cosmos import ProjectConfig, ProfileConfig, ExecutionConfig, DbtTaskGroup, RenderConfig
 
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
@@ -23,7 +11,6 @@ BUCKET = os.environ.get("GCP_GCS_BUCKET")
 DBT_PROFILE_PATH = os.environ.get("DBT_PROFILE_PATH")
 AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME")
 
-path_to_local_home = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'olist_ecom_all')
 
 FILES = [
@@ -61,16 +48,51 @@ with DAG(
     tags=['dtc-de'],
 ) as dag:
 
-    dbt_task = DbtTaskGroup(
-        group_id="transform_tasks_dbt",
+    dbt_staging = DbtTaskGroup(
+        group_id="staging",
         project_config=ProjectConfig(
             f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
+        ),
+        # Build only the staging models
+        render_config=RenderConfig(
+            select=["path:models/staging", "resource_type:seed"]
         ),
         profile_config=profile_config,
         execution_config=ExecutionConfig(
             dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
         )
     )
+    
+    dim_modeling = DbtTaskGroup(
+        group_id="dim_modeling",
+        project_config=ProjectConfig(
+            f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
+        ),
+        # Build only the dimension table model
+        render_config=RenderConfig(
+            select=["path:models/marts/dim"]
+        ),
+        profile_config=profile_config,
+        execution_config=ExecutionConfig(
+            dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
+        )
+    )
+    
+    fact_modeling = DbtTaskGroup(
+        group_id="fact_modeling",
+        project_config=ProjectConfig(
+            f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
+        ),
+        # Build only the dimension table model
+        render_config=RenderConfig(
+            select=["path:models/marts/fact"]
+        ),
+        profile_config=profile_config,
+        execution_config=ExecutionConfig(
+            dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
+        )
+    )
+    
     
     generate_dbt_docs = BashOperator(
         task_id="generate_dbt_docs",
@@ -81,7 +103,8 @@ with DAG(
             f"--target dev"
         )
     )
-
     
-    dbt_task >> generate_dbt_docs
-
+    
+    dbt_staging >> dim_modeling >> fact_modeling >> generate_dbt_docs
+    
+    
