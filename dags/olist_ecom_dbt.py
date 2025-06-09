@@ -1,36 +1,31 @@
 import os
+from pathlib import Path
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.operators.bash import BashOperator
+from datetime import timedelta
 
 from cosmos import ProjectConfig, ProfileConfig, ExecutionConfig, DbtTaskGroup, RenderConfig
 
-PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
-BUCKET = os.environ.get("GCP_GCS_BUCKET")
+# ─── Environment Variables ─────────────────────────────────────────────
+AIRFLOW_HOME = os.getenv("AIRFLOW_HOME", "/opt/airflow")
+DBT_PROFILE_PATH = os.getenv("DBT_PROFILE_PATH", "/.dbt")
+DBT_EXECUTABLE_PATH = f"{AIRFLOW_HOME}/dbt_venv/bin/dbt"
+PROJECT_DIR = f"{AIRFLOW_HOME}/dbt"
 
-DBT_PROFILE_PATH = os.environ.get("DBT_PROFILE_PATH")
-AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME")
+# Optional: log these if debugging
+PROJECT_ID = os.getenv("GCP_PROJECT_ID")
+BUCKET = os.getenv("GCP_GCS_BUCKET")
+BIGQUERY_DATASET = os.getenv("BIGQUERY_DATASET", "olist_ecom_all")
 
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'olist_ecom_all')
-
-FILES = [
-    "olist_customers_dataset",
-    "olist_order_items_dataset",
-    "olist_order_payments_dataset",
-    "olist_orders_dataset",
-    "olist_products_dataset",
-    "olist_sellers_dataset",
-]
-
+# ─── Profile Config ─────────────────────────────────────────────────────
 profile_config = ProfileConfig(
     profile_name="dbt_olist_ecom_profile",
     target_name="dev",
-
-    # Use file path to the profiles.yml file
-    profiles_yml_filepath="/.dbt/profiles.yml",
+    profiles_yml_filepath=f"{DBT_PROFILE_PATH}/profiles.yml",
 )
 
-
+# ─── Default DAG Args ───────────────────────────────────────────────────
 default_args = {
     "owner": "airflow",
     "start_date": days_ago(1),
@@ -38,73 +33,44 @@ default_args = {
     "retries": 1,
 }
 
-# DAG declaration - using a Context Manager (an implicit way)
+# ─── Helper: Create DBT TaskGroup ───────────────────────────────────────
+def create_dbt_task_group(group_id, select_path):
+    return DbtTaskGroup(
+        group_id=group_id,
+        project_config=ProjectConfig(PROJECT_DIR),
+        render_config=RenderConfig(select=[select_path]),
+        profile_config=profile_config,
+        execution_config=ExecutionConfig(dbt_executable_path=DBT_EXECUTABLE_PATH)
+    )
+
+# ─── DAG Definition ─────────────────────────────────────────────────────
 with DAG(
     dag_id="ecom_dbt_dag",
-    schedule="@daily",
+    schedule_interval="@daily",
     default_args=default_args,
     catchup=False,
     max_active_runs=1,
     tags=['dtc-de'],
+    description="Daily DBT transformations for Olist E-commerce data",
 ) as dag:
 
-    dbt_staging = DbtTaskGroup(
-        group_id="staging",
-        project_config=ProjectConfig(
-            f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
-        ),
-        # Build only the staging models
-        render_config=RenderConfig(
-            select=["path:models/staging", "resource_type:seed"]
-        ),
-        profile_config=profile_config,
-        execution_config=ExecutionConfig(
-            dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
-        )
-    )
-    
-    dim_modeling = DbtTaskGroup(
-        group_id="dim_modeling",
-        project_config=ProjectConfig(
-            f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
-        ),
-        # Build only the dimension table model
-        render_config=RenderConfig(
-            select=["path:models/marts/dim"]
-        ),
-        profile_config=profile_config,
-        execution_config=ExecutionConfig(
-            dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
-        )
-    )
-    
-    fact_modeling = DbtTaskGroup(
-        group_id="fact_modeling",
-        project_config=ProjectConfig(
-            f"{os.environ['AIRFLOW_HOME']}/dags/dbt",
-        ),
-        # Build only the dimension table model
-        render_config=RenderConfig(
-            select=["path:models/marts/fact"]
-        ),
-        profile_config=profile_config,
-        execution_config=ExecutionConfig(
-            dbt_executable_path=f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt",
-        )
-    )
-    
-    
+    # ── DBT Task Groups ───────────────────────────────────────────────
+    dbt_staging = create_dbt_task_group("staging", "path:models/staging")
+    dim_modeling = create_dbt_task_group("dim_modeling", "path:models/marts/dim")
+    fact_modeling = create_dbt_task_group("fact_modeling", "path:models/marts/fact")
+
+    # ── Generate DBT Docs ─────────────────────────────────────────────
     generate_dbt_docs = BashOperator(
         task_id="generate_dbt_docs",
         bash_command=(
-            f"{os.environ['AIRFLOW_HOME']}/dbt_venv/bin/dbt docs generate "
-            f"--project-dir {os.path.join(AIRFLOW_HOME, 'dags', 'dbt')} "
-            f"--profiles-dir /.dbt "
+            f"{DBT_EXECUTABLE_PATH} docs generate "
+            f"--project-dir {PROJECT_DIR} "
+            f"--profiles-dir {DBT_PROFILE_PATH} "
             f"--target dev"
-        )
+        ),
+        retries=1,
+        retry_delay=timedelta(minutes=5),
     )
-    
-    
+
+    # ── DAG Dependencies ──────────────────────────────────────────────
     dbt_staging >> dim_modeling >> fact_modeling >> generate_dbt_docs
-    
-    
