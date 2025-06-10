@@ -3944,3 +3944,366 @@ Update your versions in packages.yml, then run dbt deps
 [0m12:41:15.263933 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f408ab0ab70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4061b5a810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f4061548080>]}
 [0m12:41:15.265576 [debug] [MainThread]: Flushing usage events
 [0m12:41:16.703805 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m03:02:16.332437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a3b5f7a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a3fc4c20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a3b5dc70>]}
+
+
+============================== 03:02:16.340379 | 60cc6954-b31f-4c3e-ab1f-cda37caaa7bb ==============================
+[0m03:02:16.340379 [info ] [MainThread]: Running with dbt=1.9.6
+[0m03:02:16.342274 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt/logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt docs generate --project-dir /opt/airflow/dbt --profiles-dir /.dbt --target dev', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m03:02:19.183664 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '60cc6954-b31f-4c3e-ab1f-cda37caaa7bb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f707a3a3200>]}
+[0m03:02:19.298825 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '60cc6954-b31f-4c3e-ab1f-cda37caaa7bb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f707d6a6030>]}
+[0m03:02:19.300921 [info ] [MainThread]: Registered adapter: bigquery=1.9.2
+[0m03:02:19.599270 [debug] [MainThread]: checksum: 138d4a3299251970253cec0f0e7dacc4b1e9dfeac119dcf974371ed5cd150718, vars: {}, profile: , target: dev, version: 1.9.6
+[0m03:02:20.974966 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m03:02:20.975982 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m03:02:21.036172 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '60cc6954-b31f-4c3e-ab1f-cda37caaa7bb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a36604d0>]}
+[0m03:02:21.080599 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '60cc6954-b31f-4c3e-ab1f-cda37caaa7bb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f707a02f3e0>]}
+[0m03:02:21.082418 [info ] [MainThread]: Found 11 models, 1 seed, 6 sources, 607 macros
+[0m03:02:21.084253 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '60cc6954-b31f-4c3e-ab1f-cda37caaa7bb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f707a25f320>]}
+[0m03:02:21.088023 [info ] [MainThread]: 
+[0m03:02:21.089562 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m03:02:21.091086 [info ] [MainThread]: 
+[0m03:02:21.092696 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m03:02:21.100148 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_gcp-refresh-2025_olist_ecom_all'
+[0m03:02:21.101801 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:02:21.734590 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '60cc6954-b31f-4c3e-ab1f-cda37caaa7bb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f707a25fbc0>]}
+[0m03:02:21.736226 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:02:21.747433 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__customers
+[0m03:02:21.749267 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_gcp-refresh-2025_olist_ecom_all, now model.dbt_olist_ecom.stg_olist_ecom__customers)
+[0m03:02:21.750997 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__customers
+[0m03:02:21.764041 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__customers"
+[0m03:02:21.774891 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__customers
+[0m03:02:21.776438 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.782776 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__customers
+[0m03:02:21.784822 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m03:02:21.786473 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__customers, now model.dbt_olist_ecom.stg_olist_ecom__order_items)
+[0m03:02:21.787959 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m03:02:21.792781 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__order_items"
+[0m03:02:21.803265 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m03:02:21.804828 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.810394 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__order_items
+[0m03:02:21.811966 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__order_payments
+[0m03:02:21.813526 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__order_items, now model.dbt_olist_ecom.stg_olist_ecom__order_payments)
+[0m03:02:21.815221 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__order_payments
+[0m03:02:21.820365 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__order_payments"
+[0m03:02:21.832028 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__order_payments
+[0m03:02:21.833501 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.838795 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__order_payments
+[0m03:02:21.840544 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__orders
+[0m03:02:21.842183 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__order_payments, now model.dbt_olist_ecom.stg_olist_ecom__orders)
+[0m03:02:21.843706 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__orders
+[0m03:02:21.848348 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__orders"
+[0m03:02:21.862729 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__orders
+[0m03:02:21.864251 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.870217 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__orders
+[0m03:02:21.872245 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m03:02:21.874092 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__orders, now model.dbt_olist_ecom.stg_olist_ecom__sellers)
+[0m03:02:21.875535 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m03:02:21.880050 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__sellers"
+[0m03:02:21.889191 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m03:02:21.890645 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.895733 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__sellers
+[0m03:02:21.897198 [debug] [Thread-1 (]: Began running node seed.dbt_olist_ecom.product_category_name_translation
+[0m03:02:21.898631 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__sellers, now seed.dbt_olist_ecom.product_category_name_translation)
+[0m03:02:21.899833 [debug] [Thread-1 (]: Began compiling node seed.dbt_olist_ecom.product_category_name_translation
+[0m03:02:21.903606 [debug] [Thread-1 (]: Began executing node seed.dbt_olist_ecom.product_category_name_translation
+[0m03:02:21.905176 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.911829 [debug] [Thread-1 (]: Finished running node seed.dbt_olist_ecom.product_category_name_translation
+[0m03:02:21.913232 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.dim_customers
+[0m03:02:21.914600 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.dbt_olist_ecom.product_category_name_translation, now model.dbt_olist_ecom.dim_customers)
+[0m03:02:21.915918 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.dim_customers
+[0m03:02:21.939207 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.dim_customers"
+[0m03:02:21.951362 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.dim_customers
+[0m03:02:21.952917 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.958189 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.dim_customers
+[0m03:02:21.959571 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.dim_payments
+[0m03:02:21.960949 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.dim_customers, now model.dbt_olist_ecom.dim_payments)
+[0m03:02:21.962246 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.dim_payments
+[0m03:02:21.969397 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.dim_payments"
+[0m03:02:21.980450 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.dim_payments
+[0m03:02:21.981755 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:21.986792 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.dim_payments
+[0m03:02:21.988280 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.fact_order_sales
+[0m03:02:21.989713 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.dim_payments, now model.dbt_olist_ecom.fact_order_sales)
+[0m03:02:21.991047 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.fact_order_sales
+[0m03:02:22.003640 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.fact_order_sales"
+[0m03:02:22.014928 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.fact_order_sales
+[0m03:02:22.016397 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:22.022158 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.fact_order_sales
+[0m03:02:22.023913 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.dim_sellers
+[0m03:02:22.025714 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.fact_order_sales, now model.dbt_olist_ecom.dim_sellers)
+[0m03:02:22.027612 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.dim_sellers
+[0m03:02:22.035085 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.dim_sellers"
+[0m03:02:22.046795 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.dim_sellers
+[0m03:02:22.048429 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:22.053727 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.dim_sellers
+[0m03:02:22.055560 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m03:02:22.057574 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.dim_sellers, now model.dbt_olist_ecom.stg_olist_ecom__products)
+[0m03:02:22.059370 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m03:02:22.065064 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.stg_olist_ecom__products"
+[0m03:02:22.076293 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m03:02:22.093361 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:22.102413 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.stg_olist_ecom__products
+[0m03:02:22.105080 [debug] [Thread-1 (]: Began running node model.dbt_olist_ecom.dim_products
+[0m03:02:22.107017 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_olist_ecom.stg_olist_ecom__products, now model.dbt_olist_ecom.dim_products)
+[0m03:02:22.109221 [debug] [Thread-1 (]: Began compiling node model.dbt_olist_ecom.dim_products
+[0m03:02:22.115516 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_olist_ecom.dim_products"
+[0m03:02:22.125244 [debug] [Thread-1 (]: Began executing node model.dbt_olist_ecom.dim_products
+[0m03:02:22.126535 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m03:02:22.131102 [debug] [Thread-1 (]: Finished running node model.dbt_olist_ecom.dim_products
+[0m03:02:22.133386 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m03:02:22.134944 [debug] [MainThread]: Connection 'model.dbt_olist_ecom.dim_products' was properly closed.
+[0m03:02:22.138677 [debug] [MainThread]: Command end result
+[0m03:02:22.295996 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m03:02:22.304203 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m03:02:22.319216 [debug] [MainThread]: Wrote artifact RunExecutionResult to /opt/airflow/dbt/target/run_results.json
+[0m03:02:22.352689 [debug] [MainThread]: Acquiring new bigquery connection 'generate_catalog'
+[0m03:02:22.354335 [info ] [MainThread]: Building catalog
+[0m03:02:22.367542 [debug] [ThreadPool]: Acquiring new bigquery connection 'gcp-refresh-2025.information_schema'
+[0m03:02:22.402675 [debug] [ThreadPool]: On gcp-refresh-2025.information_schema: /* {"app": "dbt", "dbt_version": "1.9.6", "profile_name": "dbt_olist_ecom_profile", "target_name": "dev", "connection_name": "gcp-refresh-2025.information_schema"} */
+
+    with
+                table_shards_stage as (
+    select
+        tables.project_id as table_catalog,
+        tables.dataset_id as table_schema,
+        coalesce(REGEXP_EXTRACT(tables.table_id, '^(.+)[0-9]{8}$'), tables.table_id) as table_name,
+        tables.table_id as shard_name,
+        REGEXP_EXTRACT(tables.table_id, '^.+([0-9]{8})$') as shard_index,
+        REGEXP_CONTAINS(tables.table_id, '^.+[0-9]{8}$') and tables.type = 1 as is_date_shard,
+        case
+            when materialized_views.table_name is not null then 'materialized view'
+            when tables.type = 1 then 'table'
+            when tables.type = 2 then 'view'
+            else 'external'
+        end as table_type,
+        tables.type = 1 as is_table,
+        JSON_VALUE(table_description.option_value) as table_comment,
+        tables.size_bytes,
+        tables.row_count
+    from `gcp-refresh-2025`.`olist_ecom_all`.__TABLES__ tables
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.MATERIALIZED_VIEWS materialized_views
+        on materialized_views.table_catalog = tables.project_id
+        and materialized_views.table_schema = tables.dataset_id
+        and materialized_views.table_name = tables.table_id
+    left join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.TABLE_OPTIONS table_description
+        on table_description.table_catalog = tables.project_id
+        and table_description.table_schema = tables.dataset_id
+        and table_description.table_name = tables.table_id
+        and table_description.option_name = 'description'
+),
+                table_shards as (
+                    select * from table_shards_stage
+                    where ((
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('fact_order_sales')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('customers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__products')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('product_category_name_translation')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('dim_products')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('sellers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__orders')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('orders')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('order_items')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__customers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('dim_customers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('dim_payments')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('dim_sellers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__sellers')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__order_items')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('products')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('order_payments')
+                            ) or (
+                                upper(table_schema) = upper('olist_ecom_all')
+                            and upper(table_name) = upper('stg_olist_ecom__order_payments')
+                            ))
+                ),
+                tables as (
+    select distinct
+        table_catalog,
+        table_schema,
+        table_name,
+        is_date_shard,
+        table_type,
+        is_table,
+        table_comment
+    from table_shards
+),
+                table_stats as (
+    select
+        table_catalog,
+        table_schema,
+        table_name,
+        max(shard_name) as latest_shard_name,
+        min(shard_index) as shard_min,
+        max(shard_index) as shard_max,
+        count(shard_index) as shard_count,
+        sum(size_bytes) as size_bytes,
+        sum(row_count) as row_count
+    from table_shards
+    group by 1, 2, 3
+),
+
+                columns as (
+    select
+        columns.table_catalog,
+        columns.table_schema,
+        columns.table_name as shard_name,
+        coalesce(paths.field_path, '<unknown>') as column_name,
+        -- invent a row number to account for nested fields
+        -- BQ does not treat these nested properties as independent fields
+        row_number() over (
+            partition by
+                columns.table_catalog,
+                columns.table_schema,
+                columns.table_name
+            order by
+                columns.ordinal_position,
+                paths.field_path
+        ) as column_index,
+        coalesce(paths.data_type, '<unknown>') as column_type,
+        paths.description as column_comment,
+        case when columns.is_partitioning_column = 'YES' then 1 else 0 end as is_partitioning_column,
+        case when columns.is_partitioning_column = 'YES' then paths.field_path end as partition_column,
+        case when columns.clustering_ordinal_position is not null then 1 else 0 end as is_clustering_column,
+        case when columns.clustering_ordinal_position is not null then paths.field_path end as cluster_column,
+        columns.clustering_ordinal_position
+    from `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMNS columns
+    join `gcp-refresh-2025`.`olist_ecom_all`.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS paths
+        on paths.table_catalog = columns.table_catalog
+        and paths.table_schema = columns.table_schema
+        and paths.table_name = columns.table_name
+        and paths.column_name = columns.column_name
+    where columns.ordinal_position is not null
+),
+                column_stats as (
+    select
+        table_catalog,
+        table_schema,
+        shard_name,
+        max(is_partitioning_column) = 1 as is_partitioned,
+        max(partition_column) as partition_column,
+        max(is_clustering_column) = 1 as is_clustered,
+        array_to_string(
+            array_agg(
+                cluster_column ignore nulls
+                order by clustering_ordinal_position
+            ), ', '
+        ) as clustering_columns
+    from columns
+    group by 1, 2, 3
+)
+
+            
+    select
+        tables.table_catalog as table_database,
+        tables.table_schema,
+        case
+            when tables.is_date_shard then concat(tables.table_name, '*')
+            else tables.table_name
+        end as table_name,
+        tables.table_type,
+        tables.table_comment,
+        -- coalesce column metadata fields to ensure they are non-null for catalog generation
+        -- external table columns are not present in COLUMN_FIELD_PATHS
+        coalesce(columns.column_name, '<unknown>') as column_name,
+        coalesce(columns.column_index, 1) as column_index,
+        coalesce(columns.column_type, '<unknown>') as column_type,
+        coalesce(columns.column_comment, '') as column_comment,
+
+        'Shard count' as `stats__date_shards__label`,
+        table_stats.shard_count as `stats__date_shards__value`,
+        'The number of date shards in this table' as `stats__date_shards__description`,
+        tables.is_date_shard as `stats__date_shards__include`,
+
+        'Shard (min)' as `stats__date_shard_min__label`,
+        table_stats.shard_min as `stats__date_shard_min__value`,
+        'The first date shard in this table' as `stats__date_shard_min__description`,
+        tables.is_date_shard as `stats__date_shard_min__include`,
+
+        'Shard (max)' as `stats__date_shard_max__label`,
+        table_stats.shard_max as `stats__date_shard_max__value`,
+        'The last date shard in this table' as `stats__date_shard_max__description`,
+        tables.is_date_shard as `stats__date_shard_max__include`,
+
+        '# Rows' as `stats__num_rows__label`,
+        table_stats.row_count as `stats__num_rows__value`,
+        'Approximate count of rows in this table' as `stats__num_rows__description`,
+        tables.is_table as `stats__num_rows__include`,
+
+        'Approximate Size' as `stats__num_bytes__label`,
+        table_stats.size_bytes as `stats__num_bytes__value`,
+        'Approximate size of table as reported by BigQuery' as `stats__num_bytes__description`,
+        tables.is_table as `stats__num_bytes__include`,
+
+        'Partitioned By' as `stats__partitioning_type__label`,
+        column_stats.partition_column as `stats__partitioning_type__value`,
+        'The partitioning column for this table' as `stats__partitioning_type__description`,
+        column_stats.is_partitioned as `stats__partitioning_type__include`,
+
+        'Clustered By' as `stats__clustering_fields__label`,
+        column_stats.clustering_columns as `stats__clustering_fields__value`,
+        'The clustering columns for this table' as `stats__clustering_fields__description`,
+        column_stats.is_clustered as `stats__clustering_fields__include`
+
+    from tables
+    join table_stats
+        on table_stats.table_catalog = tables.table_catalog
+        and table_stats.table_schema = tables.table_schema
+        and table_stats.table_name = tables.table_name
+    left join column_stats
+        on column_stats.table_catalog = tables.table_catalog
+        and column_stats.table_schema = tables.table_schema
+        and column_stats.shard_name = table_stats.latest_shard_name
+    left join columns
+        on columns.table_catalog = tables.table_catalog
+        and columns.table_schema = tables.table_schema
+        and columns.shard_name = table_stats.latest_shard_name
+
+  
+[0m03:02:22.406430 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m03:02:23.237888 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=gcp-refresh-2025&j=bq:US:da8093ec-34e1-43a1-9f35-c1c40a6d7682&page=queryresults
+[0m03:02:25.336554 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m03:02:25.374238 [debug] [MainThread]: Wrote artifact CatalogArtifact to /opt/airflow/dbt/target/catalog.json
+[0m03:02:25.593656 [debug] [MainThread]: Wrote artifact WritableManifest to /opt/airflow/dbt/target/manifest.json
+[0m03:02:25.601114 [debug] [MainThread]: Wrote artifact SemanticManifest to /opt/airflow/dbt/target/semantic_manifest.json
+[0m03:02:25.602985 [info ] [MainThread]: Catalog written to /opt/airflow/dbt/target/catalog.json
+[0m03:02:25.606051 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 9.364874, "process_in_blocks": "3848", "process_kernel_time": 0.502035, "process_mem_max_rss": "378136", "process_out_blocks": "0", "process_user_time": 6.910369}
+[0m03:02:25.607957 [debug] [MainThread]: Command `dbt docs generate` succeeded at 03:02:25.607779 after 9.37 seconds
+[0m03:02:25.609273 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m03:02:25.610572 [debug] [MainThread]: Connection 'gcp-refresh-2025.information_schema' was properly closed.
+[0m03:02:25.612119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a3c14890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a42e20c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f70a42e1700>]}
+[0m03:02:25.613495 [debug] [MainThread]: Flushing usage events
+[0m03:02:26.679185 [debug] [MainThread]: An error was encountered while trying to flush usage events
