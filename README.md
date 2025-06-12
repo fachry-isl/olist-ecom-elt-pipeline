@@ -35,7 +35,7 @@ The entire workflow is managed as Infrastructure as Code using Docker and Docker
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/fachry-isl/olist-elt-pipeline.git
+git clone https://github.com/fachry-isl/olist-ecom-elt-pipeline.git
 ```
 
 
@@ -116,15 +116,15 @@ Cosmos integrates DBT directly with Airflow for streamlined observability and DA
 ##### 📊 1. Sales Performance Overview (Q3 2018):
 - Total Sales: $1.9M – down 37.95% from the previous quarter (Q2 2018) and 23.39% lower than Q3 2017.
 - Target vs Actual: Only ~78% of the $2.5M sales goal has been achieved this quarter.
-
 - Orders & Sales Trend:
     - Sales and order volumes peaked in Q2 2018 (~$3.1M), but both dropped significantly in Q3 2018.
     - This signals a potential seasonality or operational issue causing the dip.
 
 ##### 🛍️ 2. Top Sellers & Categories:
 Leading Sellers:
-    - Categories like watches_gifts, cool_stuff, and audio dominate in total sales.
-    - Individual sellers within these categories contributed significantly to the sales figures.
+- Categories like watches_gifts, cool_stuff, and audio dominate in total sales.
+
+- Individual sellers within these categories contributed significantly to the sales figures.
 
 ##### 📦 3. Product-Level Insights:
 Top Ordered Product: Health & Beauty – with 15% of all orders (50,877 total orders).
