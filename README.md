@@ -106,8 +106,13 @@ DBT allows for transformation using Dimensional Modeling (Star Schema). Features
 
 Cosmos integrates DBT directly with Airflow for streamlined observability and DAG management.
 
+
 <img src="assets/airflow_main_dag.png" alt="Alt text" width="1000"/>
 
+
+
+Heading to Browser/dbt_docs on Airflow Web UI for navigate to DBT Generated Docs.
+<img src="assets/dbt_docs.png" alt="Alt text" width="1000"/>
 
 #### Visualization using Metabase
 - Metabase is used as the BI layer to explore and visualize insights from the analytics data mart in BigQuery.
