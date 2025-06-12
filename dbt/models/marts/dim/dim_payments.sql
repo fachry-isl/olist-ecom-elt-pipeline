@@ -6,4 +6,4 @@ SELECT
     payment_installments,
     payment_value
 FROM
-    {{ref('stg_olist_ecom__order_payments')}}
+    {{ref('stg_olist_ecom__order_payments')}} 

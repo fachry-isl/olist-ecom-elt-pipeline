@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: fact_order_sales  # Change this to your actual model file name
+    description: "Fact table combining order items and order details for Olist ecommerce data"
+    columns:
+      - name: sales_key
+        description: "Surrogate key for each unique sales record (order item)"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_key
+        description: "Surrogate key for the product"
+        tests:
+          - not_null
+
+      - name: seller_key
+        description: "Surrogate key for the seller"
+        tests:
+          - not_null
+
+      - name: customer_key
+        description: "Surrogate key for the customer"
+        tests:
+          - not_null
+
+      - name: order_id
+        description: "Unique order ID"
+        tests:
+          - not_null
+
+      - name: order_item_id
+        description: "Item ID within the order"
+        tests:
+          - not_null
+
+      - name: shipping_limit_date
+        description: "Deadline for the seller to ship the order"
+
+      - name: order_approved_at
+        description: "Timestamp when the order was approved"
+
+      - name: order_delivered_carrier_date
+        description: "Timestamp when order was handed to the carrier"
+
+      - name: order_delivered_customer_date
+        description: "Timestamp when the order was delivered to the customer"
+
+      - name: order_status
+        description: "Status of the order (e.g., delivered, shipped, canceled)"
+
+      - name: price
+        description: "Price of the item"
+        tests:
+          - not_null
+
+      - name: freight_value
+        description: "Shipping fee charged for the item"
+        tests:
+          - not_null

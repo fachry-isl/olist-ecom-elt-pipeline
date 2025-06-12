@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  - name: dim_sellers  
+    description: "Dimension table containing seller information"
+    columns:
+      - name: seller_key
+        description: "Surrogate key for the seller"
+        tests:
+          - unique
+          - not_null
+
+      - name: seller_id
+        description: "Unique identifier of the seller"
+        tests:
+          - unique
+          - not_null
+
+      - name: zip_code_prefix
+        description: "Zip code prefix of the seller's location"
+
+      - name: city
+        description: "City of the seller"
+
+      - name: state
+        description: "State of the seller"
+
+  - name: dim_products  
+    description: "Dimension table containing product information"
+    columns:
+      - name: product_key
+        description: "Surrogate key for the product"
+        tests:
+          - unique
+          - not_null
+
+      - name: product_id
+        description: "Unique identifier of the product"
+        tests:
+          - unique
+          - not_null
+
+      - name: category_name
+        description: "Category name of the product"
+
+  - name: dim_payments
+    description: "Dimension table containing payment details for each order and sequential payment"
+    columns:
+      - name: payment_key
+        description: "Surrogate key for the payment (based on order_id and payment sequence)"
+        tests:
+          - unique
+          - not_null
+
+      - name: order_id
+        description: "Identifier of the order"
+
+      - name: payment_sequential
+        description: "Sequential index for multiple payments in the same order"
+
+      - name: payment_type
+        description: "Payment method used (e.g., credit_card, boleto, voucher)"
+
+      - name: payment_installments
+        description: "Number of installments used in the payment"
+
+      - name: payment_value
+        description: "Value of the payment made by the customer"
+
+  - name: dim_customers  
+    description: "Dimension table containing customer information"
+    columns:
+      - name: customer_key
+        description: "Surrogate key for the customer"
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Unique identifier of the customer"
+        tests:
+          - unique
+          - not_null
+
+      - name: zip_code_prefix
+        description: "Zip code prefix of the customer's location"
+
+      - name: city
+        description: "City of the customer"
+
+      - name: state
+        description: "State of the customer"
