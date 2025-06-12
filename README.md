@@ -35,7 +35,7 @@ The entire workflow is managed as Infrastructure as Code using Docker and Docker
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/fachry-isl/olist-elt-pipeline.git
+git clone https://github.com/fachry-isl/olist-ecom-elt-pipeline.git
 ```
 
 
